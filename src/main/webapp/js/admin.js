@@ -44,5 +44,5 @@ function listItem() {
 
 
 function goAdminPage(){
-	location.href=".//admin_login_welcome.jsp"
+	location.href=".//index.jsp"
 }
