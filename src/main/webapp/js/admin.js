@@ -40,7 +40,39 @@ function listItem() {
 
 	})
 }
+// 상품 정보를 product.jsp에 입력하기
+function productInfo() {
+	
 
+	$.ajax({
+		type: 'GET',
+		url: './listItem',
+		success: function(res) {
+			$("#ITEMNAME").empty();
+			var items = JSON.parse(res);
+			$("#ITEMPRICE").empty();
+			var items = JSON.parse(res);
+			$("#ITEMCONTENT").empty();
+			var items = JSON.parse(res);
+			
+			
+			$.each(items, function(idx, data) {
+				var name = "<h5 class='card-title'>" + data.itemName + "</h5>"
+				$("#ITEMNAME").append(name);
+								
+				var price = "<h5 class='card-title pt-3 pb-3 border-top'>" + data.itemPrice + "</h5>"
+				$("#ITEMPRICE").append(price);
+								
+				var content = "<h5 class='card-title pt-3 pb-3 border-top'>" + data.itemContent + "</h5>"
+				$("#ITEMCONTENT").append(content);
+				
+			})
+
+		}
+
+	})
+	
+}
 
 
 function goAdminPage(){

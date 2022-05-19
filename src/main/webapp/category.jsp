@@ -96,6 +96,27 @@
 								</ul>
 							</li>
 							
+							<%
+								String loginCheck = (String) session.getAttribute("login");
+								if(loginCheck != null) {
+									
+								} else {
+							 %>
+								<li><a href="loginForm.jsp">Login/Sign Up</a></li>
+							<%
+								}
+								
+								String idCheck = (String) session.getAttribute("id");
+								if(idCheck != null) {
+									if(idCheck.equals("admin")) {
+							%>						
+									<li><a href="insertItem.jsp">제품등록</a></li>
+							<%
+									} else {}
+								} else {}
+							%>
+							
+							
 							
 						</ul>
 					</nav>

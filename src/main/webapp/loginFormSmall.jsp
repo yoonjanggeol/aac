@@ -62,12 +62,14 @@
 					session.setAttribute("name", rs.getString("username"));
 					session.setAttribute("login", "yes"); // 로그인 정보
 					power = "yes";
+					response.sendRedirect("./index.jsp");
 				}
 				//	일반 사용자
 				else {
 					session.setAttribute("id", rs.getString("userid"));
 					session.setAttribute("name", rs.getString("username"));
 					session.setAttribute("login", "yes"); // 로그인 정보
+					response.sendRedirect("./index.jsp");
 				}
 			} else {
 				out.println("alert('아이디 또는 비밀번호가 올바르지 않습니다.');");	
@@ -98,12 +100,14 @@
 		if (logout != null && logout.equals("yes")) {
 			out.println("<script>");
 			out.println("alert('" + session.getAttribute("name") + "님 안녕히가세요');");
+			out.println("window.location = './index.jsp'");
 			out.println("</script>");
 			// 로그아웃 되었으므로 session에서 로그인 정보를 제거한다.
 			// removeAttribute(): 영역 변수에 저장된 데이터를 제거한다.
 			session.removeAttribute("id");
 			session.removeAttribute("name");
 			session.removeAttribute("login");
+			
 		}
 	
 	//	session에서 로그인 정보를 읽어와서 로그인 상태, 로그아웃 상태의 화면을 브라우저에 표시한다.
@@ -116,6 +120,7 @@
 		<input type="button" value="마이페이지" onclick="location.href='myInfo.jsp'"/>	
 		<input type="button" value="상품등록" onclick="location.href='insertItem.jsp'"/>
 		<input type="button" value="로그아웃" onclick="location.href='?logout=yes'"/>
+		
 	<%
 		} else if (login != null && login.equals("yes")) {
 	%>

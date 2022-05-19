@@ -1,8 +1,14 @@
+<%@page import="javax.tools.DocumentationTool.Location"%>
+<%@page import="java.io.Console"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-	<head>
+<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Welcome to AAC!!</title>
@@ -24,67 +30,100 @@
 		<meta name="twitter:card" content="" />
 	
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="shortcut icon" href="favicon.ico">
 	
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
 		
 		<!-- Animate.css -->
-		<link rel="stylesheet" href="../css/animate.css">
+		<link rel="stylesheet" href="css/animate.css">
 		<!-- Icomoon Icon Fonts-->
-		<link rel="stylesheet" href="../css/icomoon.css">
+		<link rel="stylesheet" href="css/icomoon.css">
 		<!-- Bootstrap  -->
-		<link rel="stylesheet" href="../css/bootstrap.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
 		<!-- Superfish -->
-		<link rel="stylesheet" href="../css/superfish.css">
+		<link rel="stylesheet" href="css/superfish.css">
 		<!-- Flexslider  -->
-		<link rel="stylesheet" href="../css/flexslider.css">
+		<link rel="stylesheet" href="css/flexslider.css">
 	
-		<link rel="stylesheet" href="../css/style.css">
-		
-	  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+	
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 		
 		<!-- Modernizr JS -->
-		<script src="../js/modernizr-2.6.2.min.js"></script>
+		<script src="js/modernizr-2.6.2.min.js"></script>
 		<!-- FOR IE9 below -->
 		<!--[if lt IE 9]>
 		<script src="js/respond.min.js"></script>
 		<![endif]-->
-	
+		
+		<!-- login.register script -->
+		
+		
+		<script type="text/javascript" src="./js/admin.js"></script>
+		<script>
+				window.onload = function() {
+					productInfo()
+			
+				}
+		</script>
+		
 		</head>
+		
 		<body>
 	
 			<header id="fh5co-header" role="banner">
 				<div class="container text-center">
 					<div id="fh5co-logo">
-						<a href="../index.jsp"><img src="../images/logo.png" alt="AAC Free HTML5 Bootstrap Template"></a>
+						<a href="index.jsp"><img src="images/logo.png" alt="Present Free HTML5 Bootstrap Template"></a>
 					</div>
 					<nav>
 						<ul>
-							<li><a href="../about.jsp" class="text-decoration-none">About</a></li>
+							<li><a href="home.jsp">Home</a></li>
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle text-decoration-none" data-toggle="dropdown" role="button" aria-haspopup="true"
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 									aria-expanded="false">
-									Category
+									Category<span class="caret"></span>
 								</a>
 								<ul class="dropdown-menu">
-									<li><a href="../category/a.jsp" class="text-decoration-none">상의</a></li>
-									<li><a href="../category/b.jsp" class="text-decoration-none">하의</a></li>
-									<li><a href="../category/c.jsp" class="text-decoration-none">아우터</a></li>
-									<li><a href="../category/d.jsp" class="text-decoration-none">신발</a></li>
-									<li><a href="../category/e.jsp" class="text-decoration-none">액세서리</a></li>
+									<li><a href="./category/a.jsp">상의</a></li>
+									<li><a href="./category/b.jsp">하의</a></li>
+									<li><a href="./category/c.jsp">아우터</a></li>
+									<li><a href="./category/d.jsp">신발</a></li>
+									<li><a href="./category/e.jsp">액세서리</a></li>
 								</ul>
 							</li>
-							<li><a href="../contact.jsp" class="text-decoration-none">Contact</a></li>
-							<li><a href="../loginForm.jsp" class="text-decoration-none">Login/Sign Up</a></li>
+							<li><a href="contact.jsp">Contact</a></li>
+							<%
+								String loginCheck = (String) session.getAttribute("login");
+								if(loginCheck != null) {
+							%>						
+								
+							<%
+								} else {
+							 %>
+								<li><a href="loginForm.jsp">Login/Sign Up</a></li>
+							
+							<%
+								}
+							%>
 						</ul>
 					</nav>
 				</div>
+				
+				
 			</header>
 			<!-- END #fh5co-header -->
-	
+
+
+
+
+
+
+
+
 			<!-- Main -->
 			<main class="mt-3">
 		    <div class="container">
@@ -116,8 +155,17 @@
 		        <div class="col-md-7">
 		          <div class="card shadow-sm">
 		            <div class="card-body">
-		              <h5 class="card-title">개쩌는 티셔츠</h5>
-		              <h5 class="card-title pt-3 pb-3 border-top">19,000원</h5>
+		            	<div id="ITEMNAME">
+		              		<h5 class="card-title">개쩌는 티셔츠</h5>
+		              	</div>
+		              	
+		              	<div id="ITEMPRICE">
+		              		<h5 class="card-title pt-3 pb-3 border-top">19,000원</h5>
+		              	</div>
+	              		<div id="ITEMCONTENT">
+		              		<h5 class="card-title pt-3 pb-3 border-top">정말 개쩌는 티셔츠 입니다</h5>
+		              	</div>
+		              
 		              <p class="card-text border-top pt-3">
 		                <span class="badge bg-dark">신규</span>
 		                <span class="badge bg-dark">인기</span>
@@ -170,23 +218,54 @@
 		  </main>
 
 
-			<!-- footer -->
-			<footer id="fh5co-footer" role="contentinfo">
-				<div class="container-fluid">
-					<div class="footer-content">
-						<div class="copyright"><small>&copy; 2022 AAC. All Rights Reserved. <br>Designed by <a href="http://freehtml5.co/">FreeHTML5.co</a> Images: <a href="http://graphicburger.com/">GraphicBurger</a></small></div>
-						<!-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<footer id="fh5co-footer" role="contentinfo">
+			<div class="container-fluid">
+				<div class="footer-content">
+					<div class="copyright"><small>&copy; 2022 Present. All Rights Reserved. <br>Designed by <a href="http://freehtml5.co/">FreeHTML5.co</a> Images: <a href="http://graphicburger.com/">GraphicBurger</a></small></div>
+					<!-- 
 							<div class="social">
 								<a href="#"><i class="icon-facebook3"></i></a>
 								<a href="#"><i class="icon-instagram2"></i></a>
 								<a href="#"><i class="icon-linkedin2"></i></a>
 							</div>
 						-->
-					</div>
 				</div>
-			</footer>
-			<!-- END #fh5co-footer -->
-			
+			</div>
+		</footer>
+		<!-- END #fh5co-footer -->
+		
+		
+		
 		<!-- jQuery -->
 		<script src="../js/jquery.min.js"></script>
 		<!-- Bootstrap -->
@@ -195,8 +274,18 @@
 		<script src="../js/jquery.masonry.min.js"></script>
 		<!-- MAIN JS -->
 		<script src="../js/main.js"></script>
-	
-	</body>
+		
+</body>
 </html>
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+>

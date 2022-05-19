@@ -85,7 +85,7 @@
 							</li>
 							<li><a href="contact.jsp">Contact</a></li>
 							
-							<li><a href="loginForm.jsp">Login/Sign Up</a></li>
+							<li class="active"><a href="registerForm.jsp">Login/Sign Up</a></li>
 							
 						</ul>
 					</nav>
