@@ -21,7 +21,7 @@
 	String password = request.getParameter("password");
 	// DB연결에 필요한 변수 선언
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	String uid = "tjoeunit";
+	String uid = "vanitas";
 	String upw = "0000";
 	
 	String power = "";
@@ -117,8 +117,7 @@
 	%>
 		<!-- 관리자 로그인 상태일 경우 브라우저에 표시될 내용 -->
 		${id}님 안녕하세요<br/><br/>
-		<input type="button" value="마이페이지" onclick="location.href='myInfo.jsp'"/>	
-		<input type="button" value="상품등록" onclick="location.href='insertItem.jsp'"/>
+		<input type="button" value="관리자페이지" onclick="location.href='admin_login_welcome.jsp'"/>	
 		<input type="button" value="로그아웃" onclick="location.href='?logout=yes'"/>
 		
 	<%

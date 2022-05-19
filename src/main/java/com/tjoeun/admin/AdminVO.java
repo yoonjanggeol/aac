@@ -5,7 +5,7 @@ public class AdminVO {
 	private String itemName;
 	private String itemPrice;
 	private String itemcontent;
-	
+	private String itemType;
 	public int getItemNum() {
 		return itemNum;
 	}
@@ -24,20 +24,22 @@ public class AdminVO {
 	public void setItemPrice(String itemPrice) {
 		this.itemPrice = itemPrice;
 	}
-	public String getItemContent() {
+	public String getItemcontent() {
 		return itemcontent;
 	}
-	public void setItemContent(String itemcontent) {
+	public void setItemcontent(String itemcontent) {
 		this.itemcontent = itemcontent;
+	}
+	public String getItemType() {
+		return itemType;
+	}
+	public void setItemType(String itemType) {
+		this.itemType = itemType;
 	}
 	@Override
 	public String toString() {
-		return "AdminVO [itemNum=" + itemNum + ", itemName=" + itemName + ", itemPrice=" + itemPrice + ", itemContent="
-				+ itemcontent + "]";
+		return "AdminVO [itemNum=" + itemNum + ", itemName=" + itemName + ", itemPrice=" + itemPrice + ", itemcontent="
+				+ itemcontent + ", itemType=" + itemType + "]";
 	}
-
-	
-	
-	
 	
 }

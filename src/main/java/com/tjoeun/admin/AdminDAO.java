@@ -14,12 +14,12 @@ public class AdminDAO {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
-	
+
 	public AdminDAO() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			conn = DriverManager.getConnection(url, "tjoeunit", "0000");
+			conn = DriverManager.getConnection(url, "vanitas", "0000");
 			System.out.println("연결성공: " + conn);
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 클래스가 없거나 읽어올 수 없습니다.");
@@ -27,22 +27,23 @@ public class AdminDAO {
 			System.out.println("데이터베이스 연결 정보가 올바르지 않습니다.");
 		}
 	}
-	
+
 	public int insertItem(AdminVO vo) {
 		System.out.println("adminDAO 클래스의 insertItem() 메소드");
 		try {
-			String sql = "insert into AACITEMLIST (ITEMNUM, ITEMNAME, ITEMPRICE, ITEMCONTENT) values (SEQ_ITEM_NUM.NEXTVAL, ?, ?, ?)";
+			String sql = "insert into AACITEMLIST (ITEMNUM, ITEMTYPE, ITEMNAME, ITEMPRICE, ITEMCONTENT) values (SEQ_ITEM_NUM.NEXTVAL, ?, ?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, vo.getItemName());
-			pstmt.setString(2, vo.getItemPrice());
-			pstmt.setString(3, vo.getItemContent());
+			pstmt.setString(1, vo.getItemType());
+			pstmt.setString(2, vo.getItemName());
+			pstmt.setString(3, vo.getItemPrice());
+			pstmt.setString(4, vo.getItemcontent());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return -1;
 	}
-	
+
 	public List<AdminVO> listItem() {
 		System.out.println("adminDAO 클래스의 listItem() 메소드");
 		try {
@@ -50,12 +51,13 @@ public class AdminDAO {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			List<AdminVO> voList = new ArrayList<>();
-			while(rs.next()) {
+			while (rs.next()) {
 				AdminVO vo = new AdminVO();
 				vo.setItemNum(rs.getInt("ITEMNUM"));
 				vo.setItemName(rs.getString("ITEMNAME"));
 				vo.setItemPrice(rs.getString("ITEMPRICE"));
-				vo.setItemContent(rs.getString("ITEMCONTENT"));
+				vo.setItemcontent(rs.getString("ITEMCONTENT"));
+				vo.setItemType(rs.getString("ITEMTYPE"));
 				voList.add(vo);
 			}
 			return voList;
@@ -64,6 +66,26 @@ public class AdminDAO {
 		}
 		return null;
 	}
-	
-	
+
+	public AdminVO getProduct(AdminVO vo) {
+		System.out.println("adminDAO 클래스의 getItem() 메소드");
+		try {
+			String sql = "select * from aacitemlist where itemNum = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, vo.getItemNum());
+			rs = pstmt.executeQuery();
+			AdminVO dbVo = new AdminVO();
+			while (rs.next()) {
+				dbVo.setItemNum(rs.getInt("ITEMNUM"));
+				dbVo.setItemName(rs.getString("ITEMNAME"));
+				dbVo.setItemPrice(rs.getString("ITEMPRICE"));
+				dbVo.setItemcontent(rs.getString("ITEMCONTENT"));
+			}
+			return dbVo;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }

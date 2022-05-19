@@ -1,5 +1,6 @@
 // 상품등록 함수
 function insertItem() {
+	let itemType = $('#itemType').val();
 	let itemName = $('#itemName').val();
 	let itemPrice = $('#itemPrice').val();
 	let itemContent = $('#itemContent').val();
@@ -10,7 +11,8 @@ function insertItem() {
 		data: {
 			itemName: itemName,
 			itemPrice: itemPrice,
-			itemContent: itemContent
+			itemContent: itemContent,
+			itemType: itemType
 		},
 		success: function(res) {
 			if (res === "1") {
@@ -23,16 +25,22 @@ function insertItem() {
 
 // 상품목록 함수
 function listItem() {
-
 	$.ajax({
 		type: 'GET',
 		url: './listItem',
 		success: function(res) {
 			$("#tbody").empty();
 			var items = JSON.parse(res);
-			
+
 			$.each(items, function(idx, data) {
-				var html = "<tr><td>" + data.itemNum + "</td><td>" + data.itemName + "</td><td>" + data.itemPrice + "</td><td>" + data.itemcontent + "</td></tr>";
+				var html =
+					"<tr>"
+					+ "<td><a href=javascript:goProduct(" + data.itemNum + ")>" + data.itemNum + "</a></td>"
+					+ "<td>" + data.itemType + "</td>"
+					+ "<td>" + data.itemName + "</td>"
+					+ "<td>" + data.itemPrice + "</td>"
+					+ "<td>" + data.itemcontent + "</td>"
+					+ "</tr>";
 				$("#tbody").append(html);
 			})
 
@@ -40,41 +48,13 @@ function listItem() {
 
 	})
 }
-// 상품 정보를 product.jsp에 입력하기
-function productInfo() {
-	
 
-	$.ajax({
-		type: 'GET',
-		url: './listItem',
-		success: function(res) {
-			$("#ITEMNAME").empty();
-			var items = JSON.parse(res);
-			$("#ITEMPRICE").empty();
-			var items = JSON.parse(res);
-			$("#ITEMCONTENT").empty();
-			var items = JSON.parse(res);
-			
-			
-			$.each(items, function(idx, data) {
-				var name = "<h5 class='card-title'>" + data.itemName + "</h5>"
-				$("#ITEMNAME").append(name);
-								
-				var price = "<h5 class='card-title pt-3 pb-3 border-top'>" + data.itemPrice + "</h5>"
-				$("#ITEMPRICE").append(price);
-								
-				var content = "<h5 class='card-title pt-3 pb-3 border-top'>" + data.itemContent + "</h5>"
-				$("#ITEMCONTENT").append(content);
-				
-			})
-
-		}
-
-	})
-	
+// 관리자 페이지 진입
+function goAdminPage() {
+	location.href = "/z_aac/admin_login_welcome.jsp"
 }
 
-
-function goAdminPage(){
-	location.href=".//index.jsp"
+// 상품 정보를 product.jsp에 입력하기
+function goProduct(dataNum) {
+	location.href = "/z_aac/products.jsp?pNum=" + dataNum;
 }

@@ -8,15 +8,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.eclipse.jdt.internal.compiler.parser.RecoveredRequiresStatement;
+import com.google.gson.Gson;
 
-@WebServlet("/insertItem")
-public class InsertItem extends HttpServlet {
+@WebServlet("/getProduct")
+public class GetProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public InsertItem() {
-		super();
-	}
+	public GetProduct() {
+        super();
+    }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -36,22 +36,16 @@ public class InsertItem extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 
-		String itemName = request.getParameter("itemName").trim();
-		String itemPrice = request.getParameter("itemPrice").trim();
-		String itemContent = request.getParameter("itemContent").trim();
-		String itemType = request.getParameter("itemType").trim();
+		String itemNum = request.getParameter("itemNum").trim();
 
 		AdminVO vo = new AdminVO();
-		vo.setItemName(itemName);
-		vo.setItemPrice(itemPrice);
-		vo.setItemcontent(itemContent);
-		vo.setItemType(itemType);
+		vo.setItemNum(Integer.parseInt(itemNum));
 
-		int result = new AdminDAO().insertItem(vo);
+		AdminVO result = new AdminDAO().getProduct(vo);
 		System.out.println(result);
-
-		if (result == 1) {
-			response.getWriter().write("1");
+		if(result != null) {
+			String json = new Gson().toJson(result);
+			response.getWriter().write(json);
 		}
 	}
 }
