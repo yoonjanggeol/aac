@@ -15,7 +15,7 @@ function insertItem() {
 		success: function(res) {
 			if (res === "1") {
 				alert("등록 되었습니다.")
-				location.href = "/z_aac/listItem.jsp"
+				location.href = "./listItem.jsp"
 			}
 		}
 	})
@@ -44,5 +44,5 @@ function listItem() {
 
 
 function goAdminPage(){
-	location.href="/z_aac/admin_login_welcome.jsp"
+	location.href=".//admin_login_welcome.jsp"
 }

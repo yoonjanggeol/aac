@@ -19,7 +19,7 @@ public class AdminDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			conn = DriverManager.getConnection(url, "vanitas", "0000");
+			conn = DriverManager.getConnection(url, "tjoeunit", "0000");
 			System.out.println("연결성공: " + conn);
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 클래스가 없거나 읽어올 수 없습니다.");
