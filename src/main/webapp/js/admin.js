@@ -54,7 +54,19 @@ function goAdminPage() {
 	location.href = "/z_aac/admin_login_welcome.jsp"
 }
 
+// 상품수정 페이지 진입
+function goModifyItem() {
+	location.href = "/z_aac/modifyItem.jsp"
+}
+
 // 상품 정보를 product.jsp에 입력하기
 function goProduct(dataNum) {
 	location.href = "/z_aac/products.jsp?pNum=" + dataNum;
 }
+
+// 상품수정페이지 상품번호 검색
+function goAjax() {
+	let itemNum = $('#itemNum').val();
+	console.log(itemNum)
+}
+
