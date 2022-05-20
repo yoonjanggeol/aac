@@ -11,6 +11,9 @@ function goSearchItem() {
 			itemNum: itemNum
 		},
 		success: function(res) {
+			if(res.itemNum === 0){
+				alert("상품이 존재하지 않습니다.")
+			}
 			$("#modifyDIv").show()
 			var item = JSON.parse(res);
 			$("#itemNum").val(item.itemNum)
