@@ -119,6 +119,10 @@
 	</header>
 	<!-- END #fh5co-header -->
 
+
+
+
+
 	<div class="panel-body">
 		<div class="row">
 			<div class="col-lg-12">
@@ -147,7 +151,28 @@
 						</tr>
 						<tr>
 							<td>상품이미지</td>
-							<td><input type="file" name="file1"></td>
+							<td>
+								<input type="file" id="itemImg" name="file"/>
+								<div class="select_img"><img id="imgs" src="" /></div>
+							 
+								<script>
+							  	$("#itemImg").change(function(){
+								  	if(this.files && this.files[0]) {
+									    var reader = new FileReader;
+									    reader.onload = function(data) {
+									    	$(".select_img img").attr("src", data.target.result).width(500);        
+									    }
+									    reader.readAsDataURL(this.files[0]);
+									}
+								});
+
+							  	$("#itemImg").change(function(){
+							  	  	let img = document.getElementById('imgs')
+							  	  	console.log(img) 
+							  	  	
+							  	});
+							 	</script>
+							</td>
 						</tr>
 						<tr>
 
