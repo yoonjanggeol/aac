@@ -33,6 +33,11 @@
 		<tbody id="tbody">
 		</tbody>
 	</table>
+	<br>
+	<div style="text-align: center">
 	<button type="button" onclick="goAdminPage()">관리자 페이지</button>
+	<button type="button" onclick="goModifyItem()">상품수정 페이지</button>
+	</div>
+	
 </body>
 </html>
