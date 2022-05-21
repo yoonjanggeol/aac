@@ -40,7 +40,7 @@
 		<!-- Icomoon Icon Fonts-->
 		<link rel="stylesheet" href="css/icomoon.css">
 		<!-- Bootstrap  -->
-		<link rel="stylesheet" href="css/bootstrap.css">
+		
 		<!-- Superfish -->
 		<link rel="stylesheet" href="css/superfish.css">
 		<!-- Flexslider  -->
@@ -80,19 +80,19 @@
 						<a href="index.jsp"><img src="images/logo.png" alt="Present Free HTML5 Bootstrap Template"></a>
 					</div>
 					<nav>
+					<hr>
 						<ul>
 							<li><a href="home.jsp">Home</a></li>
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-									aria-expanded="false">
-									Category<span class="caret"></span>
+								<a class="dropdown-toggle" id="dropdownMenuButton1" style="active" data-bs-toggle="dropdown" aria-expanded="false">
+								    Category
 								</a>
-								<ul class="dropdown-menu">
-									<li><a href="./category/a.jsp">상의</a></li>
-									<li><a href="./category/b.jsp">하의</a></li>
-									<li><a href="./category/c.jsp">아우터</a></li>
-									<li><a href="./category/d.jsp">신발</a></li>
-									<li><a href="./category/e.jsp">액세서리</a></li>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+								  <li><a class="dropdown-item" href="../category/a.jsp">상의</a></li>
+								  <li><a class="dropdown-item" href="../category/b.jsp">하의</a></li>
+								  <li><a class="dropdown-item" href="../category/c.jsp">아우터</a></li>
+								  <li><a class="dropdown-item" href="../category/d.jsp">신발</a></li>
+								  <li><a class="dropdown-item" href="../category/e.jsp">액세서리</a></li>
 								</ul>
 							</li>
 							<li><a href="contact.jsp">Contact</a></li>
@@ -111,6 +111,7 @@
 							%>
 						</ul>
 					</nav>
+					<hr>
 				</div>
 				
 				
@@ -154,7 +155,7 @@
 		<!-- jQuery -->
 		<script src="../js/jquery.min.js"></script>
 		<!-- Bootstrap -->
-		<script src="../js/bootstrap.min.js"></script>
+		
 		<!-- masonry -->
 		<script src="../js/jquery.masonry.min.js"></script>
 		<!-- MAIN JS -->

@@ -49,7 +49,7 @@
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="css/icomoon.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	
 	<!-- Superfish -->
 	<link rel="stylesheet" href="css/superfish.css">
 	<!-- Flexslider  -->
@@ -57,13 +57,21 @@
 
 	<link rel="stylesheet" href="css/style.css">
 
+	<!-- 외부파일 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+	
+	
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+	
+	<style type="text/css">
+  	 	a {
+   	  	 text-decoration:none;
+   		}
+	</style>
+	
 
 	</head>
 	<body>
@@ -75,19 +83,19 @@
 						<a href="index.jsp"><img src="images/logo.png" alt="Present Free HTML5 Bootstrap Template"></a>
 					</div>
 					<nav>
+					<hr>
 						<ul>
-							<li class="active"><a href="Home.jsp">Home</a></li>
+							<li><a href="home.jsp"><b>Home</b></a></li>
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-									aria-expanded="false">
-									Category<span class="caret"></span>
+								<a class="dropdown-toggle" id="dropdownMenuButton1" style="active" data-bs-toggle="dropdown" aria-expanded="false">
+								    Category
 								</a>
-								<ul class="dropdown-menu">
-									<li><a href="./category/a.jsp">상의</a></li>
-									<li><a href="./category/b.jsp">하의</a></li>
-									<li><a href="./category/c.jsp">아우터</a></li>
-									<li><a href="./category/d.jsp">신발</a></li>
-									<li><a href="./category/e.jsp">액세서리</a></li>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+								  <li><a class="dropdown-item" href="../category/a.jsp">상의</a></li>
+								  <li><a class="dropdown-item" href="../category/b.jsp">하의</a></li>
+								  <li><a class="dropdown-item" href="../category/c.jsp">아우터</a></li>
+								  <li><a class="dropdown-item" href="../category/d.jsp">신발</a></li>
+								  <li><a class="dropdown-item" href="../category/e.jsp">액세서리</a></li>
 								</ul>
 							</li>
 							<li><a href="contact.jsp">Contact</a></li>
@@ -113,6 +121,7 @@
 							
 						</ul>
 					</nav>
+					<hr>
 				</div>
 				
 				<div align="right">
@@ -123,16 +132,13 @@
 		<!-- END #fh5co-header -->
 
 		<div class="page-content">
-			<h1 class="mb0">About Me</h1>
-			<div class="meta"><span>Web Designer</span>, <span>Illustrator</span>, <span>Speaker</span></div>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat nostrum, neque cum, quidem inventore consequatur sunt optio sint! Veritatis maiores recusandae dolores nihil cumque, eaque eius obcaecati voluptatum necessitatibus.</p>
-			<p class="text-center"><img src="images/person.jpg" alt="Free HTML5 by FreeHTML5.co"></p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi saepe officia, consectetur praesentium minus reiciendis, accusamus consequuntur iusto ad illum quibusdam commodi facere tenetur. Culpa quia laborum quam, sint laboriosam delectus veniam, at molestiae magnam iusto similique dolorem ea doloremque!</p>
-			<p>Ullam recusandae error odit eveniet soluta temporibus quis mollitia dignissimos quasi, magni culpa sed, minima atque quae a vitae dolores, illo cum sint! Quaerat rem incidunt nihil laborum nulla placeat soluta, fugit dolor aperiam facere itaque laboriosam error ratione praesentium.</p>
+			<h1 class="mb0">AAC</h1>
+			<div class="meta"><span>All About Clothes</div>
+			<p>AAC는 All About Clothes의 줄임말로서 2022년 5월 16일부터 2022년 5월 27일(진우 생일ㅎ)까지 진행된 온라인 쇼핑몰 프로젝트입니다.</p>
+			<p class="text-center"><img src="images/prototype.jpg" alt="prototype"></p>
 			<ul class="square">
-				<li>Laboriosam error ratione praesentium</li>
-				<li>Similique dolorem</li>
-				<li>Iusto ad illum quibusdam</li>
+				<li>프론트 담당-명인, 진우</li>
+				<li>백 담당-장걸, 윤지</li>
 			</ul>
 		</div>
 
@@ -142,12 +148,8 @@
 		<footer id="fh5co-footer" role="contentinfo">
 			<div class="container-fluid">
 				<div class="footer-content">
-					<div class="copyright"><small>&copy; 2016 Present. All Rights Reserved. <br>Designed by <a href="http://freehtml5.co/">FreeHTML5.co</a> Images: <a href="http://graphicburger.com/">GraphicBurger</a></small></div>
-					<div class="social">
-						<a href="#"><i class="icon-facebook3"></i></a>
-						<a href="#"><i class="icon-instagram2"></i></a>
-						<a href="#"><i class="icon-linkedin2"></i></a>
-					</div>
+					<div class="copyright"><small>&copy; 2022 AAC. All Rights Reserved. <br>Project by 3조.</small></div>
+					
 				</div>
 			</div>
 		</footer>
@@ -156,7 +158,7 @@
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	
 	<!-- masonry -->
 	<script src="js/jquery.masonry.min.js"></script>
 	<!-- MAIN JS -->

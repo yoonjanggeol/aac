@@ -50,7 +50,7 @@
 		<link rel="stylesheet" href="css/flexslider.css">
 	
 		<link rel="stylesheet" href="css/style.css">
-	
+		
 	
 		<!-- Modernizr JS -->
 		<script src="js/modernizr-2.6.2.min.js"></script>
@@ -58,6 +58,12 @@
 		<!--[if lt IE 9]>
 		<script src="js/respond.min.js"></script>
 		<![endif]-->
+	
+		<style type="text/css">
+	  	 	a {
+	   	  	 text-decoration:none;
+	   		}
+		</style>
 	
 		</head>
 		<body>
@@ -67,28 +73,7 @@
 					<div id="fh5co-logo">
 						<a href="index.jsp"><img src="images/logo.png" alt="Present Free HTML5 Bootstrap Template"></a>
 					</div>
-					<nav>
-						<ul>
-							<li><a href="home.jsp">Home</a></li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-									aria-expanded="false">
-									Category<span class="caret"></span>
-								</a>
-								<ul class="dropdown-menu">
-									<li><a href="./category/a.jsp">상의</a></li>
-									<li><a href="./category/b.jsp">하의</a></li>
-									<li><a href="./category/c.jsp">아우터</a></li>
-									<li><a href="./category/d.jsp">신발</a></li>
-									<li><a href="./category/e.jsp">액세서리</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.jsp">Contact</a></li>
-							
-							<li class="active"><a href="registerForm.jsp">Login/Sign Up</a></li>
-							
-						</ul>
-					</nav>
+					<hr>
 				</div>
 				
 				
@@ -281,7 +266,7 @@
 <footer id="fh5co-footer" role="contentinfo">
 			<div class="container-fluid">
 				<div class="footer-content">
-					<div class="copyright"><small>&copy; 2022 Present. All Rights Reserved. <br>Designed by <a href="http://freehtml5.co/">FreeHTML5.co</a> Images: <a href="http://graphicburger.com/">GraphicBurger</a></small></div>
+					<div class="copyright"><small>&copy; 2022 AAC. All Rights Reserved. <br>Project by 3조.</small></div>
 					<!-- 
 							<div class="social">
 								<a href="#"><i class="icon-facebook3"></i></a>

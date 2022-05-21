@@ -54,13 +54,19 @@
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="css/icomoon.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	
 	<!-- Superfish -->
 	<link rel="stylesheet" href="css/superfish.css">
 	<!-- Flexslider  -->
 	<link rel="stylesheet" href="css/flexslider.css">
 
 	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- 외부파일 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+	
 
 
 	<!-- Modernizr JS -->
@@ -70,6 +76,12 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+	<style type="text/css">
+  	 	a {
+   	  	 text-decoration:none;
+   		}
+	</style>
+	
 	</head>
 	<body>
 
@@ -80,22 +92,22 @@
 						<a href="index.jsp"><img src="images/logo.png" alt="Present Free HTML5 Bootstrap Template"></a>
 					</div>
 					<nav>
+					<hr>
 						<ul>
 							<li><a href="home.jsp">Home</a></li>
 							<li class="dropdown; active">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-									aria-expanded="false">
-									Category<span class="caret"></span>
+								<a class="dropdown-toggle" id="dropdownMenuButton1" style="active" data-bs-toggle="dropdown" aria-expanded="false">
+								    Category
 								</a>
-								<ul class="dropdown-menu">
-									<li><a href="./category/a.jsp">상의</a></li>
-									<li><a href="./category/b.jsp">하의</a></li>
-									<li><a href="./category/c.jsp">아우터</a></li>
-									<li><a href="./category/d.jsp">신발</a></li>
-									<li><a href="./category/e.jsp">액세서리</a></li>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+								  <li><a class="dropdown-item" href="../category/a.jsp">상의</a></li>
+								  <li><a class="dropdown-item" href="../category/b.jsp">하의</a></li>
+								  <li><a class="dropdown-item" href="../category/c.jsp">아우터</a></li>
+								  <li><a class="dropdown-item" href="../category/d.jsp">신발</a></li>
+								  <li><a class="dropdown-item" href="../category/e.jsp">액세서리</a></li>
 								</ul>
 							</li>
-							
+							<li class="active"><a href="contact.jsp">Contact</a></li>
 							<%
 								String loginCheck = (String) session.getAttribute("login");
 								if(loginCheck != null) {
@@ -115,11 +127,9 @@
 									} else {}
 								} else {}
 							%>
-							
-							
-							
 						</ul>
 					</nav>
+					<hr>
 				</div>
 				
 				<div align="right">
@@ -134,122 +144,74 @@
 			<div id="fh5co-projects-feed" class="fh5co-projects-feed clearfix masonry">
 				<div class="fh5co-project masonry-brick">
 					<a href="single.html">
-						<img src="images/img_20.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
+						<img src="images/a1.jpg" alt="겜빗 스타디움 자켓" width="300px">
+						<h2>겜빗 스타디움 자켓</h2>
 					</a>
 				</div>
 				<div class="fh5co-project masonry-brick">
 					<a href="single.html">
-						<img src="images/img_19.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
+						<img src="images/a2.jpg" alt="톰 후드 자켓" width="300px">
+						<h2>톰 후드 자켓</h2>
 					</a>
 				</div>
 				<div class="fh5co-project masonry-brick">
 					<a href="single.html">
-						<img src="images/img_3.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
+						<img src="images/a3.jpg" alt="울 트렌치 코트" width="300px">
+						<h2>울 트렌치 코트</h2>
 					</a>
 				</div>
 				<div class="fh5co-project masonry-brick">
 					<a href="single.html">
-						<img src="images/img_4.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
+						<img src="images/a4.jpg" alt="오버핏 무스탕 자켓" width="300px">
+						<h2>오버핏 무스탕 자켓</h2>
 					</a>
 				</div>
 				<div class="fh5co-project masonry-brick">
 					<a href="single.html">
-						<img src="images/img_5.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
+						<img src="images/b1.jpg" alt="헤비 오버핏 니트" width="300px">
+						<h2>헤비 오버핏 니트</h2>
 					</a>
 				</div>
 				<div class="fh5co-project masonry-brick">
 					<a href="single.html">
-						<img src="images/img_6.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
+						<img src="images/b2.jpg" alt="퍼스텝 니트" width="300px">
+						<h2>퍼스텝 니트</h2>
 					</a>
 				</div>
 				<div class="fh5co-project masonry-brick">
 					<a href="single.html">
-						<img src="images/img_7.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
+						<img src="images/b3.jpg" alt="퍼스텝 니트" width="300px">
+						<h2>퍼스텝 니트</h2>
 					</a>
 				</div>
 				<div class="fh5co-project masonry-brick">
 					<a href="single.html">
-						<img src="images/img_8.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
+						<img src="images/b4.jpg" alt="스티치 세미오버핏 자켓 (챠콜)" width="300px">
+						<h2>스티치 세미오버핏 자켓 (챠콜)</h2>
 					</a>
 				</div>
 				<div class="fh5co-project masonry-brick">
 					<a href="single.html">
-						<img src="images/img_9.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
+						<img src="images/c1.jpg" alt="밴딩 쿨 크롭팬츠" width="300px">
+						<h2>밴딩 쿨 크롭팬츠</h2>
 					</a>
 				</div>
 				<div class="fh5co-project masonry-brick">
 					<a href="single.html">
-						<img src="images/img_10.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
+						<img src="images/c2.jpg" alt="히든 밴딩 슬랙스" width="300px">
+						<h2>히든 밴딩 슬랙스</h2>
 					</a>
 				</div>
 				<div class="fh5co-project masonry-brick">
 					<a href="single.html">
-						<img src="images/img_11.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
+						<img src="images/c3.jpg" alt="테이퍼드 슬랙스" width="300px">
+						<h2>테이퍼드 슬랙스</h2>
 					</a>
 				</div>
 				<div class="fh5co-project masonry-brick">
 					<a href="single.html">
-						<img src="images/img_12.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
-					</a>
-				</div>
-				<div class="fh5co-project masonry-brick">
-					<a href="single.html">
-						<img src="images/img_13.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
-					</a>
-				</div>
-				<div class="fh5co-project masonry-brick">
-					<a href="single.html">
-						<img src="images/img_14.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
-					</a>
-				</div>
-				<div class="fh5co-project masonry-brick">
-					<a href="single.html">
-						<img src="images/img_15.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
-					</a>
-				</div>
-				<div class="fh5co-project masonry-brick">
-					<a href="single.html">
-						<img src="images/img_16.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
-					</a>
-				</div>
-				<div class="fh5co-project masonry-brick">
-					<a href="single.html">
-						<img src="images/img_17.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
-					</a>
-				</div>
-				<div class="fh5co-project masonry-brick">
-					<a href="single.html">
-						<img src="images/img_18.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
-					</a>
-				</div>
-				<div class="fh5co-project masonry-brick">
-					<a href="single.html">
-						<img src="images/img_19.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
-					</a>
-				</div>
-				<div class="fh5co-project masonry-brick">
-					<a href="single.html">
-						<img src="images/img_20.jpg" alt="Free HTML5 by FreeHTML5.co">
-						<h2>Your Project Title Here</h2>
+						<img src="images/c4.jpg" alt="딥 컬러 와이드 슬랙스" width="300px">
+						<h2>딥 컬러 와이드 슬랙스</h2>
 					</a>
 				</div>
 			</div>
@@ -260,12 +222,7 @@
 		<footer id="fh5co-footer" role="contentinfo">
 			<div class="container-fluid">
 				<div class="footer-content">
-					<div class="copyright"><small>&copy; 2016 Present. All Rights Reserved. <br>Designed by <a href="http://freehtml5.co/">FreeHTML5.co</a> Images: <a href="http://graphicburger.com/">GraphicBurger</a></small></div>
-					<div class="social">
-						<a href="#"><i class="icon-facebook3"></i></a>
-						<a href="#"><i class="icon-instagram2"></i></a>
-						<a href="#"><i class="icon-linkedin2"></i></a>
-					</div>
+					<div class="copyright"><small>&copy; 2022 AAC. All Rights Reserved. <br>Project by 3조</small></div>
 				</div>
 			</div>
 		</footer>
@@ -274,7 +231,7 @@
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	
 	<!-- masonry -->
 	<script src="js/jquery.masonry.min.js"></script>
 	<!-- MAIN JS -->

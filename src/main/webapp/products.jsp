@@ -40,7 +40,7 @@
 		<!-- Icomoon Icon Fonts-->
 		<link rel="stylesheet" href="css/icomoon.css">
 		<!-- Bootstrap  -->
-		<link rel="stylesheet" href="css/bootstrap.css">
+		
 		<!-- Superfish -->
 		<link rel="stylesheet" href="css/superfish.css">
 		<!-- Flexslider  -->
@@ -61,10 +61,10 @@
 		
 		<!-- login.register script -->
 		
-			
-	<script type="text/javascript" src="./js/products.js"></script>
-	<script type="text/javascript" src="./js/admin.js"></script>
-	<script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+		
+		<script type="text/javascript" src="./js/products.js"></script>
+		<script type="text/javascript" src="./js/admin.js"></script>
+		<script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
 		<script type="text/javascript" src="./js/admin.js"></script>
 		<script>
 				window.onload = function() {
@@ -73,6 +73,11 @@
 				}
 		</script>
 		
+		<style type="text/css">
+  	 	a {
+   	  	 text-decoration:none;
+   		}
+		</style>
 		</head>
 		
 		<body>
@@ -83,12 +88,12 @@
 						<a href="index.jsp"><img src="images/logo.png" alt="Present Free HTML5 Bootstrap Template"></a>
 					</div>
 					<nav>
+					<hr>
 						<ul>
 							<li><a href="home.jsp">Home</a></li>
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-									aria-expanded="false">
-									Category<span class="caret"></span>
+								<a class="dropdown-toggle" id="dropdownMenuButton1" style="active" data-bs-toggle="dropdown" aria-expanded="false">
+								    Category
 								</a>
 								<ul class="dropdown-menu">
 									<li><a href="./category/a.jsp">상의</a></li>
@@ -124,6 +129,7 @@
 							%>
 						</ul>
 					</nav>
+					<hr>
 				</div>
 				
 				
@@ -143,13 +149,13 @@
 						class="carousel carousel-dark slide" data-bs-ride="carousel">
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="../images/img_1.jpg" class="d-block w-100" alt="...">
+								<img src="./images/img_1.jpg" class="d-block w-100" alt="...">
 							</div>
 							<div class="carousel-item">
-								<img src="../images/img_2.jpg" class="d-block w-100" alt="...">
+								<img src="./images/img_2.jpg" class="d-block w-100" alt="...">
 							</div>
 							<div class="carousel-item">
-								<img src="../images/img_3.jpg" class="d-block w-100" alt="...">
+								<img src="./images/img_3.jpg" class="d-block w-100" alt="...">
 							</div>
 						</div>
 						<a class="carousel-control-prev" href="#carouselExampleIndicators"
@@ -226,46 +232,12 @@
 			</div>
 		</div>
 	</main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
 
 	<footer id="fh5co-footer" role="contentinfo">
 			<div class="container-fluid">
 				<div class="footer-content">
-					<div class="copyright"><small>&copy; 2022 Present. All Rights Reserved. <br>Designed by <a href="http://freehtml5.co/">FreeHTML5.co</a> Images: <a href="http://graphicburger.com/">GraphicBurger</a></small></div>
-					<!-- 
-							<div class="social">
-								<a href="#"><i class="icon-facebook3"></i></a>
-								<a href="#"><i class="icon-instagram2"></i></a>
-								<a href="#"><i class="icon-linkedin2"></i></a>
-							</div>
-						-->
+					<div class="copyright"><small>&copy; 2022 AAC. All Rights Reserved. <br>Project by 3조</small></div>
 				</div>
 			</div>
 		</footer>
@@ -276,7 +248,7 @@
 		<!-- jQuery -->
 		<script src="../js/jquery.min.js"></script>
 		<!-- Bootstrap -->
-		<script src="../js/bootstrap.min.js"></script>
+
 		<!-- masonry -->
 		<script src="../js/jquery.masonry.min.js"></script>
 		<!-- MAIN JS -->

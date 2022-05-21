@@ -49,13 +49,18 @@
 <!-- Icomoon Icon Fonts-->
 <link rel="stylesheet" href="css/icomoon.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/bootstrap.css">
+
 <!-- Superfish -->
 <link rel="stylesheet" href="css/superfish.css">
 <!-- Flexslider  -->
 <link rel="stylesheet" href="css/flexslider.css">
 
 <link rel="stylesheet" href="css/style.css">
+<!-- 외부파일 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+	
 
 
 <!-- Modernizr JS -->
@@ -77,17 +82,17 @@
 			<nav>
 				<ul>
 					<li><a href="home.jsp">Home</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false"> Category<span class="caret"></span>
-					</a>
-						<ul class="dropdown-menu">
-							<li><a href="./category/a.jsp">상의</a></li>
-							<li><a href="./category/b.jsp">하의</a></li>
-							<li><a href="./category/c.jsp">아우터</a></li>
-							<li><a href="./category/d.jsp">신발</a></li>
-							<li><a href="./category/e.jsp">액세서리</a></li>
-						</ul></li>
+					<li class="dropdown"><a class="dropdown-toggle" id="dropdownMenuButton1" style="active" data-bs-toggle="dropdown" aria-expanded="false">
+								    Category
+								</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+						  <li><a class="dropdown-item" href="../category/a.jsp">상의</a></li>
+						  <li><a class="dropdown-item" href="../category/b.jsp">하의</a></li>
+						  <li><a class="dropdown-item" href="../category/c.jsp">아우터</a></li>
+						  <li><a class="dropdown-item" href="../category/d.jsp">신발</a></li>
+						  <li><a class="dropdown-item" href="../category/e.jsp">액세서리</a></li>
+						</ul>
+					</li>
 					<li><a href="contact.jsp">Contact</a></li>
 					<%
 					String loginCheck = (String) session.getAttribute("login");
@@ -200,9 +205,7 @@
 		<div class="container-fluid">
 			<div class="footer-content">
 				<div class="copyright">
-					<small>&copy; 2022 Present. All Rights Reserved. <br>Designed
-						by <a href="http://freehtml5.co/">FreeHTML5.co</a> Images: <a
-						href="http://graphicburger.com/">GraphicBurger</a></small>
+					<small>&copy; 2022 AAC. All Rights Reserved. <br>Project by 3조.</small>
 				</div>
 				<!-- 
 							<div class="social">
