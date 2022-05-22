@@ -4,7 +4,8 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@
 </head>
 <body>
 
-<%
+	<%
 
 	request.setCharacterEncoding("UTF-8");
 	
@@ -115,24 +116,29 @@
 		if (login != null && login.equals("yes") && session.getAttribute("id").equals("admin")) {
 		
 	%>
-		<!-- 관리자 로그인 상태일 경우 브라우저에 표시될 내용 -->
-		${id}님 안녕하세요<br/><br/>
-		<input type="button" value="관리자페이지" onclick="location.href='admin_login_welcome.jsp'"/>	
-		<input type="button" value="로그아웃" onclick="location.href='?logout=yes'"/>
-		
+	<!-- 관리자 로그인 상태일 경우 브라우저에 표시될 내용 -->
+	${id}님 안녕하세요
+	<br />
+	<br />
+	<input type="button" value="관리자페이지"
+		onclick="location.href='admin_login_welcome.jsp'" />
+	<input type="button" value="로그아웃" onclick="location.href='?logout=yes'" />
+
 	<%
 		} else if (login != null && login.equals("yes")) {
 	%>
-		<!-- 일반 사용자 로그인 상태일 경우 브라우저에 표시될 내용 -->
-		${id}님 안녕하세요<br/><br/>
-		<input type="button" value="마이페이지" onclick="location.href='myInfo.jsp'"/>	
-		<input type="button" value="로그아웃" onclick="location.href='?logout=yes'"/>
-		<input type="button" value="찜목록" onclick="location.href='?myWish.jsp'"/>
+	<!-- 일반 사용자 로그인 상태일 경우 브라우저에 표시될 내용 -->
+	${id}님 안녕하세요
+	<br />
+	<br />
+	<input type="button" value="마이페이지" onclick="location.href='myInfo.jsp'" />
+	<input type="button" value="로그아웃" onclick="location.href='?logout=yes'" />
+	<input type="button" value="찜목록" onclick="location.href='?myWish.jsp'" />
 	<%
 		}
 		else {
 	%>
-	
+
 	<!-- 로그아웃 상태일 경우 브라우저에 표시될 내용 -->
 	<form action="?" method="post">
 		<table width="300" border="1" cellpadding="5" cellspacing="0">
@@ -146,34 +152,23 @@
 			</tr>
 			-->
 			<tr>
-				<th>
-					<label for="id">아이디</label>
-				</th>
-				<td>
-					<input id="id" type="text" name="id"/>
-				</td>
+				<th><label for="id">아이디</label></th>
+				<td><input id="id" type="text" name="id" /></td>
 			</tr>
 			<tr>
-				<th>
-					<label for="password">비밀번호</label>
-				</th>
-				<td>
-					<input id="password" type="text" name="password"/>
-				</td>
+				<th><label for="password">비밀번호</label></th>
+				<td><input id="password" type="text" name="password" /></td>
 			</tr>
 			<tr>
-				<td colspan="1">
-				
-				</td>
-				<td colspan="1" align="center">
-					<input type="submit" value="로그인"/>
-					<input type="button" value="회원가입" onclick="location.href='registerForm.jsp'"/>
-				</td>
+				<td colspan="1"></td>
+				<td colspan="1" align="center"><input type="submit" value="로그인" />
+					<input type="button" value="회원가입"
+					onclick="location.href='registerForm.jsp'" /></td>
 			</tr>
 		</table>
 	</form>
 
-<%
+	<%
 	}
 %>
 

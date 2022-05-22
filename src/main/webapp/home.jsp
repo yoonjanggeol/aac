@@ -68,7 +68,8 @@
 	
 	<style type="text/css">
   	 	a {
-   	  	 text-decoration:none;
+   	  	 text-decoration: none;
+   	  	 cursor: pointer;
    		}
 	</style>
 	
@@ -80,12 +81,12 @@
 			<header id="fh5co-header" role="banner">
 				<div class="container text-center">
 					<div id="fh5co-logo">
-						<a href="index.jsp"><img src="images/logo.png" alt="Present Free HTML5 Bootstrap Template"></a>
+						<a href="index.jsp"><img src="images/logo.png" alt="logo"></a>
 					</div>
 					<nav>
 					<hr>
 						<ul>
-							<li><a href="home.jsp"><b>Home</b></a></li>
+							<li><a href="index.jsp"><b>Home</b></a></li>
 							<li class="dropdown">
 								<a class="dropdown-toggle" id="dropdownMenuButton1" style="active" data-bs-toggle="dropdown" aria-expanded="false">
 								    Category
@@ -98,7 +99,7 @@
 								  <li><a class="dropdown-item" href="../category/e.jsp">액세서리</a></li>
 								</ul>
 							</li>
-							<li><a href="contact.jsp">Contact</a></li>
+							<li><a href="contact.jsp">About</a></li>
 							<%
 								String loginCheck = (String) session.getAttribute("login");
 								if(loginCheck != null) {
@@ -113,7 +114,8 @@
 								if(idCheck != null) {
 									if(idCheck.equals("admin")) {
 							%>						
-									<li><a href="insertItem.jsp">제품등록</a></li>
+									<li><a href="listItem.jsp">Product Lists</a></li>
+									<li><a href="insertItem.jsp">Add a Product</a></li>
 							<%
 									} else {}
 								} else {}
@@ -148,7 +150,7 @@
 		<footer id="fh5co-footer" role="contentinfo">
 			<div class="container-fluid">
 				<div class="footer-content">
-					<div class="copyright"><small>&copy; 2022 AAC. All Rights Reserved. <br>Project by 3조.</small></div>
+					<div class="copyright"><small>&copy; 2022 AAC. All Rights Reserved. <br>Project by 3조. <br>전화번호: 02-1234-5678 | 주소: 서울특별시 종로구 삼일대로 385-1.</small></div>
 					
 				</div>
 			</div>

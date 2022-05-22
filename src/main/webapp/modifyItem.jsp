@@ -9,16 +9,24 @@
 <script type="text/javascript" src="./js/modify.js"></script>
 
 <link rel="shortcut icon" href="favicon.ico">
-	
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
-<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+
+<link
+	href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900'
+	rel='stylesheet' type='text/css'>
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700"
+	rel="stylesheet">
 
 <!-- Animate.css -->
 <link rel="stylesheet" href="css/animate.css">
 <!-- Icomoon Icon Fonts-->
 <link rel="stylesheet" href="css/icomoon.css">
 <!-- Bootstrap  -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
 <!-- Superfish -->
 <link rel="stylesheet" href="css/superfish.css">
 <!-- Flexslider  -->
@@ -39,62 +47,60 @@
 <body>
 
 	<header id="fh5co-header" role="banner">
-				<div class="container text-center">
-					<div id="fh5co-logo">
-						<a href="index.jsp"><img src="images/logo.png" alt="Present Free HTML5 Bootstrap Template"></a>
-					</div>
-					<nav>
-					<hr>
-						<ul>
-							<li><a href="home.jsp">Home</a></li>
-							<li class="dropdown">
-								<a class="dropdown-toggle" id="dropdownMenuButton1" style="active" data-bs-toggle="dropdown" aria-expanded="false">
-								    Category
-								</a>
-								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-								  <li><a class="dropdown-item" href="../category/a.jsp">상의</a></li>
-								  <li><a class="dropdown-item" href="../category/b.jsp">하의</a></li>
-								  <li><a class="dropdown-item" href="../category/c.jsp">아우터</a></li>
-								  <li><a class="dropdown-item" href="../category/d.jsp">신발</a></li>
-								  <li><a class="dropdown-item" href="../category/e.jsp">액세서리</a></li>
-								</ul>
-							</li>
-							
-							<li><a href="contact.jsp">Contact</a></li>
-							<%
+		<div class="container text-center">
+			<div id="fh5co-logo">
+				<a href="index.jsp"><img src="images/logo.png" alt="logo"></a>
+			</div>
+			<nav>
+				<hr>
+				<ul>
+					<li><a href="index.jsp">Home</a></li>
+					<li class="dropdown"><a class="dropdown-toggle"
+						id="dropdownMenuButton1" style="" data-bs-toggle="dropdown"
+						aria-expanded="false">Category</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+							<li><a class="dropdown-item" href="../category/a.jsp">상의</a></li>
+							<li><a class="dropdown-item" href="../category/b.jsp">하의</a></li>
+							<li><a class="dropdown-item" href="../category/c.jsp">아우터</a></li>
+							<li><a class="dropdown-item" href="../category/d.jsp">신발</a></li>
+							<li><a class="dropdown-item" href="../category/e.jsp">액세서리</a></li>
+						</ul></li>
+
+					<li><a href="contact.jsp">About</a></li>
+					<%
 								String loginCheck = (String) session.getAttribute("login");
 								if(loginCheck != null) {
 									
 								} else {
 							 %>
-								<li><a href="loginForm.jsp">Login/Sign Up</a></li>
-							
-							<%
+					<li><a href="loginForm.jsp">Login/Sign Up</a></li>
+
+					<%
 								}
 								String idCheck = (String) session.getAttribute("id");
 								if(idCheck != null) {
 									if(idCheck.equals("admin")) {
-							%>						
-									
-								<li><a href="listItem.jsp">상품목록</a></li>
-								<li><a href="insertItem.jsp">상품등록</a></li>
-							<%
+							%>
+
+					<li><a href="listItem.jsp">Product Lists</a></li>
+					<li><a href="insertItem.jsp">Add a Product</a></li>
+					<%
 									} else {}
 								} else {}
 							%>
-							
-						</ul>
-					</nav>
-					<hr>
-				</div>
-				
-				<div align="right">
-					<%@ include file="./loginFormSmall.jsp" %>
-				</div>
-				
-			</header>
-		<!-- END #fh5co-header -->
-		
+
+				</ul>
+			</nav>
+			<hr>
+		</div>
+
+		<div align="right">
+			<%@ include file="./loginFormSmall.jsp"%>
+		</div>
+
+	</header>
+	<!-- END #fh5co-header -->
+
 	<!-- 상품 조회 -->
 	<div style="text-align: center">
 		상품번호 : <input type="text" id="searchItemNum" size="20">
@@ -135,24 +141,31 @@
 			<button type="button" onclick="doDelete()">상품삭제</button>
 		</div>
 	</div>
-	
+
 	<footer id="fh5co-footer" role="contentinfo">
-			<div class="container-fluid">
-				<div class="footer-content">
-					<div class="copyright"><small>&copy; 2022 AAC. All Rights Reserved. <br>Project by 3조.</small></div>
-					
+		<div class="container-fluid">
+			<div class="footer-content">
+				<div class="copyright">
+					<small>&copy; 2022 AAC. All Rights Reserved. <br>Project
+						by 3조. <br>전화번호: 02-1234-5678 | 주소: 서울특별시 종로구 삼일대로 385-1.
+					</small>
 				</div>
+
 			</div>
-		</footer>
-		<!-- END #fh5co-footer -->
-			
-		<!-- jQuery -->
-		<script src="js/jquery.min.js"></script>
-		<!-- Bootstrap -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-		<!-- masonry -->
-		<script src="js/jquery.masonry.min.js"></script>
-		<!-- MAIN JS -->
-		<script src="js/main.js"></script>
+		</div>
+	</footer>
+	<!-- END #fh5co-footer -->
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<!-- masonry -->
+	<script src="js/jquery.masonry.min.js"></script>
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
 </body>
 </html>
