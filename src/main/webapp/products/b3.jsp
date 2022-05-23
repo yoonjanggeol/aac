@@ -69,11 +69,20 @@ a {
 </style>
 
 <script>
+	var price=142400;
+	
+	window.onload = function(){
+		 document.getElementById("price").innerHTML = priceToString(price)+"원";
+	}
+	
 	function Calculate() {
-	    var price = parseInt(document.getElementById("price").innerText);
 	    var quantity = parseInt(document.getElementById("quantity").value);
 		var total = price * quantity;
-	    document.getElementById("total").innerHTML = "<h3>"+total+"원</h3>";
+	    document.getElementById("total").innerHTML = "<h3>"+priceToString(total)+"원</h3>";
+	}
+	
+	function priceToString(a) {
+	    return a.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 	}
 </script>
 </head>
@@ -90,7 +99,7 @@ a {
 					<li><a href="../index.jsp">Home</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
 						id="dropdownMenuButton1" style="" data-bs-toggle="dropdown"
-						aria-expanded="false"> Category </a>
+						aria-expanded="false">Category</a>
 						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 							<li><a class="dropdown-item" href="../category/a.jsp">상의</a></li>
 							<li><a class="dropdown-item" href="../category/b.jsp">하의</a></li>
@@ -171,7 +180,7 @@ a {
 					<div class="card shadow-sm">
 						<div class="card-body">
 							<h5 class="card-title">투 톤 트렌치코트</h5>
-							<h5 class="card-title pt-3 pb-3 border-top" id="price">142400원</h5>
+							<h5 class="card-title pt-3 pb-3 border-top" id="price">142,400원</h5>
 							<p class="card-text border-top pt-3">
 								<span class="badge bg-dark">FREE</span>
 							</p>
@@ -195,7 +204,7 @@ a {
 									<h3>Total</h3>
 								</div>
 								<div class="col-6" style="text-align: right;" id="total">
-									<h3>142400원</h3>
+									<h3>142,400원</h3>
 								</div>
 							</div>
 							<div class="d-flex justify-content-between align-items-center">
