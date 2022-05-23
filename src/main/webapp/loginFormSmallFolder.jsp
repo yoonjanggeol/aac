@@ -22,7 +22,7 @@
 	String password = request.getParameter("password");
 	// DB연결에 필요한 변수 선언
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	String uid = "vanitas";
+	String uid = "squidink607";
 	String upw = "0000";
 	
 	String power = "";
@@ -101,7 +101,7 @@
 		if (logout != null && logout.equals("yes")) {
 			out.println("<script>");
 			out.println("alert('" + session.getAttribute("name") + "님 안녕히가세요');");
-			out.println("window.location = './index.jsp'");
+			out.println("window.location = '../index.jsp'");
 			out.println("</script>");
 			// 로그아웃 되었으므로 session에서 로그인 정보를 제거한다.
 			// removeAttribute(): 영역 변수에 저장된 데이터를 제거한다.
