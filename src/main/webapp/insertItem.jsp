@@ -98,11 +98,11 @@ a {
 						id="dropdownMenuButton1" style="" data-bs-toggle="dropdown"
 						aria-expanded="false">Category</a>
 						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-							<li><a class="dropdown-item" href="../category/a.jsp">상의</a></li>
-							<li><a class="dropdown-item" href="../category/b.jsp">하의</a></li>
-							<li><a class="dropdown-item" href="../category/c.jsp">아우터</a></li>
-							<li><a class="dropdown-item" href="../category/d.jsp">신발</a></li>
-							<li><a class="dropdown-item" href="../category/e.jsp">액세서리</a></li>
+							<li><a class="dropdown-item" href="./category/a.jsp">상의</a></li>
+							<li><a class="dropdown-item" href="./category/b.jsp">하의</a></li>
+							<li><a class="dropdown-item" href="./category/c.jsp">아우터</a></li>
+							<li><a class="dropdown-item" href="./category/d.jsp">신발</a></li>
+							<li><a class="dropdown-item" href="./category/e.jsp">액세서리</a></li>
 						</ul></li>
 					<li><a href="contact.jsp">About</a></li>
 					<%
@@ -121,6 +121,7 @@ a {
 					%>
 					<li><a href="listItem.jsp">Product Lists</a></li>
 					<li><a href="insertItem.jsp"><b>Add a Product</b></a></li>
+					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
 					} else {
 					}
@@ -131,7 +132,9 @@ a {
 			</nav>
 			<hr>
 		</div>
-
+<div style="display: none;">
+	<%@ include file="./loginFormSmall.jsp"%>
+</div>
 
 	</header>
 	<!-- END #fh5co-header -->

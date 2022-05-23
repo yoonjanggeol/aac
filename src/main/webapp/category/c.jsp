@@ -92,32 +92,38 @@ a {
 						</ul></li>
 					<li><a href="../contact.jsp">About</a></li>
 					<%
-								String loginCheck = (String) session.getAttribute("login");
-								if(loginCheck != null) {
-							%>
+					String loginCheck = (String) session.getAttribute("login");
+					if (loginCheck != null) {
+					%>
 
 					<%
-								} else {
-							 %>
+					} else {
+					%>
 					<li><a href="../loginForm.jsp">Login/Sign Up</a></li>
 
 					<%
-								}
-								String idCheck = (String) session.getAttribute("id");
-								if(idCheck != null) {
-									if(idCheck.equals("admin")) {
-							%>
+					}
+					String idCheck = (String) session.getAttribute("id");
+					if (idCheck != null) {
+					if (idCheck.equals("admin")) {
+					%>
 
 					<li><a href="../listItem.jsp">Product Lists</a></li>
 					<li><a href="../insertItem.jsp">Add a Product</a></li>
+					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-									} else {}
-								} else {}
-							%>
+					} else {
+					}
+					} else {
+					}
+					%>
 
 				</ul>
 			</nav>
 			<hr>
+		</div>
+		<div style="display: none;">
+			<%@ include file="../loginFormSmallFolder.jsp"%>
 		</div>
 	</header>
 	<!-- END #fh5co-header -->
@@ -127,26 +133,26 @@ a {
 		<div id="fh5co-projects-feed"
 			class="fh5co-projects-feed clearfix masonry">
 			<div class="fh5co-project masonry-brick">
-				<a href="../products/a1.jsp"> <img src="../images/a1.jpg" alt="겜빗 스타디움 자켓"
-					width="300px">
+				<a href="../products/a1.jsp"> <img src="../images/a1.jpg"
+					alt="겜빗 스타디움 자켓" width="300px">
 					<h2>겜빗 스타디움 자켓</h2>
 				</a>
 			</div>
 			<div class="fh5co-project masonry-brick">
-				<a href="../products/a2.jsp"> <img src="../images/a2.jpg" alt="톰 후드 자켓"
-					width="300px">
+				<a href="../products/a2.jsp"> <img src="../images/a2.jpg"
+					alt="톰 후드 자켓" width="300px">
 					<h2>톰 후드 자켓</h2>
 				</a>
 			</div>
 			<div class="fh5co-project masonry-brick">
-				<a href="../products/a3.jsp"> <img src="../images/a3.jpg" alt="울 트렌치 코트"
-					width="300px">
+				<a href="../products/a3.jsp"> <img src="../images/a3.jpg"
+					alt="울 트렌치 코트" width="300px">
 					<h2>울 트렌치 코트</h2>
 				</a>
 			</div>
 			<div class="fh5co-project masonry-brick">
-				<a href="../products/a4.jsp"> <img src="../images/a4.jpg" alt="오버핏 무스탕 자켓"
-					width="300px">
+				<a href="../products/a4.jsp"> <img src="../images/a4.jpg"
+					alt="오버핏 무스탕 자켓" width="300px">
 					<h2>오버핏 무스탕 자켓</h2>
 				</a>
 			</div>

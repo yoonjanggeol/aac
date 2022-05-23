@@ -99,70 +99,109 @@ a {
 
 					<li><a href="contact.jsp">About</a></li>
 					<%
-								String loginCheck = (String) session.getAttribute("login");
-								if(loginCheck != null) {
-									
-								} else {
-							 %>
+					String loginCheck = (String) session.getAttribute("login");
+					if (loginCheck != null) {
+
+					} else {
+					%>
 					<li><a href="loginForm.jsp">Login/Sign Up</a></li>
 
 					<%
-								}
-								String idCheck = (String) session.getAttribute("id");
-								if(idCheck != null) {
-									if(idCheck.equals("admin")) {
-							%>
+					}
+					String idCheck = (String) session.getAttribute("id");
+					if (idCheck != null) {
+					if (idCheck.equals("admin")) {
+					%>
 
 					<li><a href="listItem.jsp">Product Lists</a></li>
 					<li><a href="insertItem.jsp">Add a Product</a></li>
+					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-									} else {}
-								} else {}
-							%>
+					} else {
+					}
+					} else {
+					}
+					%>
 
 				</ul>
 			</nav>
 			<hr>
 		</div>
 
-		<div align="right">
+		<div style="display: none;">
 			<%@ include file="./loginFormSmall.jsp"%>
 		</div>
-
 	</header>
 	<!-- END #fh5co-header -->
 
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="carouselExampleIndicators"
+					class="carousel carousel-dark slide" data-bs-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-bs-target="#carouselExampleIndicators"
+							data-bs-slide-to="0" class="active"></li>
+						<li data-bs-target="#carouselExampleIndicators"
+							data-bs-slide-to="1"></li>
+						<li data-bs-target="#carouselExampleIndicators"
+							data-bs-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="images/I.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="images/wanna.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="images/gohome.jpg" class="d-block w-100" alt="...">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators"
+						role="button" data-bs-slide="prev"> <span
+						class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+						class="visually-hidden">Previous</span>
+					</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
+						role="button" data-bs-slide="next"> <span
+						class="carousel-control-next-icon" aria-hidden="true"></span> <span
+						class="visually-hidden">Next</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div class="container-fluid pt70 pb70">
 		<div id="fh5co-projects-feed"
 			class="fh5co-projects-feed clearfix masonry">
 			<div class="fh5co-project masonry-brick">
-				<a href="products/a1.jsp"> <img src="images/a1.jpg" alt="겜빗 스타디움 자켓"
-					width="300px">
+				<a href="products/a1.jsp"> <img src="images/a1.jpg"
+					alt="겜빗 스타디움 자켓" width="300px">
 					<h2>겜빗 스타디움 자켓</h2>
 				</a>
 			</div>
 			<div class="fh5co-project masonry-brick">
-				<a href="products/a2.jsp"> <img src="images/a2.jpg" alt="톰 후드 자켓"
-					width="300px">
+				<a href="products/a2.jsp"> <img src="images/a2.jpg"
+					alt="톰 후드 자켓" width="300px">
 					<h2>톰 후드 자켓</h2>
 				</a>
 			</div>
 			<div class="fh5co-project masonry-brick">
-				<a href="products/a3.jsp"> <img src="images/a3.jpg" alt="울 트렌치 코트"
-					width="300px">
+				<a href="products/a3.jsp"> <img src="images/a3.jpg"
+					alt="울 트렌치 코트" width="300px">
 					<h2>울 트렌치 코트</h2>
 				</a>
 			</div>
 			<div class="fh5co-project masonry-brick">
-				<a href="products/a4.jsp"> <img src="images/a4.jpg" alt="오버핏 무스탕 자켓"
-					width="300px">
+				<a href="products/a4.jsp"> <img src="images/a4.jpg"
+					alt="오버핏 무스탕 자켓" width="300px">
 					<h2>오버핏 무스탕 자켓</h2>
 				</a>
 			</div>
 			<div class="fh5co-project masonry-brick">
-				<a href="products/b1.jsp"> <img src="images/b1.jpg" alt="헤비 오버핏 니트"
-					width="300px">
+				<a href="products/b1.jsp"> <img src="images/b1.jpg"
+					alt="헤비 오버핏 니트" width="300px">
 					<h2>헤비 오버핏 니트</h2>
 				</a>
 			</div>
@@ -185,20 +224,20 @@ a {
 				</a>
 			</div>
 			<div class="fh5co-project masonry-brick">
-				<a href="products/c1.jsp"> <img src="images/c1.jpg" alt="밴딩 쿨 크롭팬츠"
-					width="300px">
+				<a href="products/c1.jsp"> <img src="images/c1.jpg"
+					alt="밴딩 쿨 크롭팬츠" width="300px">
 					<h2>밴딩 쿨 크롭팬츠</h2>
 				</a>
 			</div>
 			<div class="fh5co-project masonry-brick">
-				<a href="products/c2.jsp"> <img src="images/c2.jpg" alt="히든 밴딩 슬랙스"
-					width="300px">
+				<a href="products/c2.jsp"> <img src="images/c2.jpg"
+					alt="히든 밴딩 슬랙스" width="300px">
 					<h2>히든 밴딩 슬랙스</h2>
 				</a>
 			</div>
 			<div class="fh5co-project masonry-brick">
-				<a href="products/c3.jsp"> <img src="images/c3.jpg" alt="테이퍼드 슬랙스"
-					width="300px">
+				<a href="products/c3.jsp"> <img src="images/c3.jpg"
+					alt="테이퍼드 슬랙스" width="300px">
 					<h2>테이퍼드 슬랙스</h2>
 				</a>
 			</div>

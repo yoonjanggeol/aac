@@ -127,6 +127,7 @@ a {
 
 					<li><a href="../listItem.jsp">Product Lists</a></li>
 					<li><a href="../insertItem.jsp">Add a Product</a></li>
+					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
 									} else {}
 								} else {}
@@ -135,6 +136,9 @@ a {
 				</ul>
 			</nav>
 			<hr>
+		</div>
+		<div style="display: none;">
+			<%@ include file="../loginFormSmallFolder.jsp"%>
 		</div>
 	</header>
 	<!-- END #fh5co-header -->
@@ -154,14 +158,10 @@ a {
 						</ol>
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img
-									src="../images/a3.jpg"
-									class="d-block w-100" alt="...">
+								<img src="../images/a3.jpg" class="d-block w-100" alt="...">
 							</div>
 							<div class="carousel-item">
-								<img
-									src="../images/a3_1.jpg"
-									class="d-block w-100" alt="...">
+								<img src="../images/a3_1.jpg" class="d-block w-100" alt="...">
 							</div>
 						</div>
 						<a class="carousel-control-prev" href="#carouselExampleIndicators"
@@ -182,10 +182,10 @@ a {
 							<h5 class="card-title">울 트렌치 코트</h5>
 							<h5 class="card-title pt-3 pb-3 border-top" id="price">146,400원</h5>
 							<p class="card-text border-top pt-3">
-								<span class="badge bg-dark">S</span> <span
-									class="badge bg-dark">M</span>
+								<span class="badge bg-dark">S</span> <span class="badge bg-dark">M</span>
 							</p>
-							<p class="card-text pb-3">하프 기장감으로 체형커버에 탁월하여 인포켓으로 디자인되어 고급스러움을 느낄 수 있습니다.</p>
+							<p class="card-text pb-3">하프 기장감으로 체형커버에 탁월하여 인포켓으로 디자인되어
+								고급스러움을 느낄 수 있습니다.</p>
 							<p class="card-text border-top pb-3">
 							<div class="row">
 								<div class="col-auto">
@@ -193,9 +193,9 @@ a {
 								</div>
 								<div class="col-auto">
 									<div class="input-group">
-										<input type="number" name="quantity" id="quantity" tabindex="1"
-											class="form-control" placeholder="0" value="1" min="1"
-											max="100" onfocusout="Calculate()">
+										<input type="number" name="quantity" id="quantity"
+											tabindex="1" class="form-control" placeholder="0" value="1"
+											min="1" max="100" onfocusout="Calculate()">
 									</div>
 								</div>
 							</div>
@@ -210,15 +210,15 @@ a {
 							</div>
 							<div class="d-flex justify-content-between align-items-center">
 								<div class="col-12 d-grid p-1">
-									<button type="button" class="btn btn-lg btn-dark">Add to Cart</button>
+									<button type="button" class="btn btn-lg btn-dark">Add
+										to Cart</button>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-			</div>
+			<div class="row"></div>
 		</div>
 	</main>
 
