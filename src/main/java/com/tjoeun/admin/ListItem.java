@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.tomcat.jni.File;
-
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 
@@ -20,8 +18,8 @@ public class ListItem extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public ListItem() {
-		super();
-	}
+        super();
+    }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -41,11 +39,9 @@ public class ListItem extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 
+
 		List<AdminVO> list = new AdminDAO().listItem();
-		for (int i = 0; i < list.size(); i++) {
-			list.get(i).setItemImg("./upload/"+list.get(i).getItemImg());
-		}
-		if (list != null) {
+		if(list != null) {
 			String json = new Gson().toJson(list);
 			response.getWriter().write(json);
 		}

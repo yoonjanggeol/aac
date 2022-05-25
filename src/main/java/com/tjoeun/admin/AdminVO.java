@@ -6,7 +6,6 @@ public class AdminVO {
 	private String itemPrice;
 	private String itemcontent;
 	private String itemType;
-	private String itemImg;
 	public int getItemNum() {
 		return itemNum;
 	}
@@ -37,18 +36,10 @@ public class AdminVO {
 	public void setItemType(String itemType) {
 		this.itemType = itemType;
 	}
-	public String getItemImg() {
-		return itemImg;
-	}
-	public void setItemImg(String itemImg) {
-		this.itemImg = itemImg;
-	}
-	
 	@Override
 	public String toString() {
 		return "AdminVO [itemNum=" + itemNum + ", itemName=" + itemName + ", itemPrice=" + itemPrice + ", itemcontent="
-				+ itemcontent + ", itemType=" + itemType + ", itemImg=" + itemImg + "]";
+				+ itemcontent + ", itemType=" + itemType + "]";
 	}
-	
 	
 }

@@ -4,7 +4,8 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,11 +15,11 @@
 <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="./js/admin.js"></script>
 
-
 <title>Welcome to AAC!!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+<meta name="keywords"
+	content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 <meta name="author" content="FREEHTML5.CO" />
 
 
@@ -36,32 +37,26 @@
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="favicon.ico">
 
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
-<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+<link
+	href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900'
+	rel='stylesheet' type='text/css'>
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700"
+	rel="stylesheet">
 
 <!-- Animate.css -->
 <link rel="stylesheet" href="css/animate.css">
 <!-- Icomoon Icon Fonts-->
 <link rel="stylesheet" href="css/icomoon.css">
 <!-- Bootstrap  -->
-
+<link rel="stylesheet" href="css/bootstrap.css">
 <!-- Superfish -->
 <link rel="stylesheet" href="css/superfish.css">
 <!-- Flexslider  -->
 <link rel="stylesheet" href="css/flexslider.css">
 
 <link rel="stylesheet" href="css/style.css">
-<!-- 외부파일 -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-<style type="text/css">
-a {
-	text-decoration: none;
-	cursor: pointer;
-}
-</style>
 
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
@@ -72,24 +67,28 @@ a {
 
 </head>
 <body>
+
 	<header id="fh5co-header" role="banner">
 		<div class="container text-center">
 			<div id="fh5co-logo">
-				<a href="index.jsp"><img src="images/logo.png" alt="logo"></a>
+				<a href="index.jsp"><img src="images/logo.png"
+					alt="Present Free HTML5 Bootstrap Template"></a>
 			</div>
 			<nav>
-				<hr>
 				<ul>
-					<li><a href="index.jsp">Home</a></li>
-					<li class="dropdown"><a class="dropdown-toggle" id="dropdownMenuButton1" style="" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
-						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-							<li><a class="dropdown-item" href="./category/a.jsp">상의</a></li>
-							<li><a class="dropdown-item" href="./category/b.jsp">하의</a></li>
-							<li><a class="dropdown-item" href="./category/c.jsp">아우터</a></li>
-							<li><a class="dropdown-item" href="./category/d.jsp">신발</a></li>
-							<li><a class="dropdown-item" href="./category/e.jsp">액세서리</a></li>
+					<li><a href="home.jsp">Home</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false"> Category<span class="caret"></span>
+					</a>
+						<ul class="dropdown-menu">
+							<li><a href="./category/a.jsp">상의</a></li>
+							<li><a href="./category/b.jsp">하의</a></li>
+							<li><a href="./category/c.jsp">아우터</a></li>
+							<li><a href="./category/d.jsp">신발</a></li>
+							<li><a href="./category/e.jsp">액세서리</a></li>
 						</ul></li>
-					<li><a href="contact.jsp">About</a></li>
+					<li><a href="contact.jsp">Contact</a></li>
 					<%
 					String loginCheck = (String) session.getAttribute("login");
 					if (loginCheck != null) {
@@ -104,75 +103,81 @@ a {
 					if (idCheck != null) {
 					if (idCheck.equals("admin")) {
 					%>
-					<li><a href="listItem.jsp">Product Lists</a></li>
-					<li><a href="insertItem.jsp"><b>Add a Product</b></a></li>
-					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+					<li><a href="insertItem.jsp">제품등록</a></li>
 					<%
 					} else {
 					}
 					} else {
 					}
 					%>
+
 				</ul>
 			</nav>
-			<hr>
 		</div>
-		<div style="display: none;">
-			<%@ include file="./loginFormSmall.jsp"%>
-		</div>
-	</header>
 
+
+	</header>
 	<!-- END #fh5co-header -->
+
 	<div class="panel-body">
 		<div class="row"> 
 			<div class="col-lg-12">
-				<h2>상품 등록</h2>
-				<!-- 파일업로드를 위해 추가하는 타입 -->
-				<form action="./insertItem" method="post" enctype="multipart/form-data">
+				<form id="login-form" action="?" method="post" role="form"
+					style="display: block;">
+					<h2>상품 등록</h2>
+					<!-- 파일업로드를 위해 추가하는 타입 -->
 
 					<table>
 						<tr>
 							<td>상품종류</td>
-							<td>
-								<input name="itemType" id="itemType">
-							</td>
+							<td><input id="itemType"></td>
 						</tr>
 						<tr>
 							<td>상품명</td>
-							<td>
-								<input name="itemName" id="itemName">
-							</td>
+							<td><input id="itemName"></td>
 						</tr>
 						<tr>
 							<td>가격</td>
-							<td>
-								<input name="itemPrice" id="itemPrice">
-							</td>
+							<td><input id="itemPrice"></td>
 						</tr>
 						<tr>
 							<td>상품설명</td>
-							<td>
-								<textarea rows="5" cols="60" name="description" id="itemContent"></textarea>
-							</td>
+							<td><textarea rows="5" cols="60" name="description"
+									id="itemContent"></textarea></td>
 						</tr>
 						<tr>
-							<td colspan="2">
-								<input type="file" name="filename" />
+							<td>상품이미지</td>
+							<td><input type="file" name="file1"></td>
+						</tr>
+						<tr>
+
+							<td colspan="2" align="center">
+								<%-- <input type="button" value="등록"
+						                    onclick="product_write()"> <!-- "등록" 버튼을 누르면 위쪽에 있는 스크립트문에서 product_write()함수가 호출되서 실행되 insert.do페이지로 자료를 전송한다. -->
+						                    <input type="button" value="목록"
+						                    onclick="location.href='${path}/admin/product/list.do'"> <!-- "목록 버튼을 누르면 list.do페이지로 이동" --> --%>
+								<input class="btn btn-primary" type="button" value="상품등록"
+								onclick="insertItem()" />
 							</td>
 						</tr>
 					</table>
-					<input class="btn btn-primary" type="submit" value="상품등록">
+
+
+
 				</form>
 			</div>
 		</div>
 	</div>
 
+
+
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container-fluid">
 			<div class="footer-content">
 				<div class="copyright">
-					<small>&copy; 2022 AAC. All Rights Reserved. <br>Project by 3조. <br>전화번호: 02-1234-5678 | 주소: 서울특별시 종로구 삼일대로 385-1.
-					</small>
+					<small>&copy; 2022 Present. All Rights Reserved. <br>Designed
+						by <a href="http://freehtml5.co/">FreeHTML5.co</a> Images: <a
+						href="http://graphicburger.com/">GraphicBurger</a></small>
 				</div>
 				<!-- 
 							<div class="social">
