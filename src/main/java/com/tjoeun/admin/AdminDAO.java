@@ -8,8 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tjoeun.admin.AdminVO;
-
 public class AdminDAO {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
@@ -68,7 +66,7 @@ public class AdminDAO {
 	}
 
 	public AdminVO getProduct(AdminVO vo) {
-		System.out.println("adminDAO 클래스의 getItem() 메소드");
+		System.out.println("adminDAO 클래스의 getProduct() 메소드");
 		try {
 			String sql = "select * from aacitemlist where itemNum = ?";
 			pstmt = conn.prepareStatement(sql);
@@ -88,4 +86,56 @@ public class AdminDAO {
 		return null;
 	}
 
+	public AdminVO searchItem(int itemNum) {
+		System.out.println("adminDAO 클래스의 searchItem() 메소드");
+		try {
+			String sql = "select * from aacitemlist where itemNum = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, itemNum);
+			rs = pstmt.executeQuery();
+			AdminVO dbVo = new AdminVO();
+			while (rs.next()) {
+				dbVo.setItemNum(rs.getInt("ITEMNUM"));
+				dbVo.setItemName(rs.getString("ITEMNAME"));
+				dbVo.setItemPrice(rs.getString("ITEMPRICE"));
+				dbVo.setItemcontent(rs.getString("ITEMCONTENT"));
+				dbVo.setItemType(rs.getString("ITEMTYPE"));
+			}
+			return dbVo;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public int modifyItem(AdminVO vo) {
+		System.out.println("adminDAO 클래스의 modifyItem() 메소드");
+		try {
+			String sql = "update aacitemlist set itemType = ?, itemName = ?, itemPrice = ?, itemContent = ? where itemNum = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getItemType());
+			pstmt.setString(2, vo.getItemName());
+			pstmt.setString(3, vo.getItemPrice());
+			pstmt.setString(4, vo.getItemcontent());
+			pstmt.setInt(5, vo.getItemNum());
+			return pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+
+	
+	public int deleteItem(int itemNum) {
+		System.out.println("adminDAO 클래스의 deleteItem() 메소드");
+		try {
+			String sql = "delete from aacitemlist where itemNum = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, itemNum);
+			return pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
 }

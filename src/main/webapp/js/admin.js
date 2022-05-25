@@ -4,7 +4,7 @@ function insertItem() {
 	let itemName = $('#itemName').val();
 	let itemPrice = $('#itemPrice').val();
 	let itemContent = $('#itemContent').val();
-
+	let itemImg = $('#itemImg').val();
 	$.ajax({
 		type: 'POST',
 		url: './insertItem',
@@ -12,7 +12,8 @@ function insertItem() {
 			itemName: itemName,
 			itemPrice: itemPrice,
 			itemContent: itemContent,
-			itemType: itemType
+			itemType: itemType,
+			itemImg: itemImg
 		},
 		success: function(res) {
 			if (res === "1") {
@@ -49,12 +50,39 @@ function listItem() {
 	})
 }
 
+// 이미지 이름 DB에 itemImg에 넣기
+
+$("#itemImg").change(function(){
+  	let img = document.getElementsByName('itemImg')[0].src
+  	console.log(img) 
+  	
+});
+
+
+
+
+
+
+
+
 // 관리자 페이지 진입
 function goAdminPage() {
 	location.href = "/z_aac/admin_login_welcome.jsp"
+}
+
+// 상품수정 페이지 진입
+function goModifyItem() {
+	location.href = "/z_aac/modifyItem.jsp"
 }
 
 // 상품 정보를 product.jsp에 입력하기
 function goProduct(dataNum) {
 	location.href = "/z_aac/products.jsp?pNum=" + dataNum;
 }
+
+// 상품수정페이지 상품번호 검색
+function goAjax() {
+	let itemNum = $('#itemNum').val();
+	console.log(itemNum)
+}
+

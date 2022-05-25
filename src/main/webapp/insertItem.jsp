@@ -49,14 +49,31 @@
 <!-- Icomoon Icon Fonts-->
 <link rel="stylesheet" href="css/icomoon.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/bootstrap.css">
+
 <!-- Superfish -->
 <link rel="stylesheet" href="css/superfish.css">
 <!-- Flexslider  -->
 <link rel="stylesheet" href="css/flexslider.css">
 
 <link rel="stylesheet" href="css/style.css">
+<!-- 외부파일 -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+	crossorigin="anonymous">
 
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+	crossorigin="anonymous"></script>
+
+<style type="text/css">
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+</style>
 
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
@@ -71,24 +88,23 @@
 	<header id="fh5co-header" role="banner">
 		<div class="container text-center">
 			<div id="fh5co-logo">
-				<a href="index.jsp"><img src="images/logo.png"
-					alt="Present Free HTML5 Bootstrap Template"></a>
+				<a href="index.jsp"><img src="images/logo.png" alt="logo"></a>
 			</div>
 			<nav>
+				<hr>
 				<ul>
-					<li><a href="home.jsp">Home</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false"> Category<span class="caret"></span>
-					</a>
-						<ul class="dropdown-menu">
-							<li><a href="./category/a.jsp">상의</a></li>
-							<li><a href="./category/b.jsp">하의</a></li>
-							<li><a href="./category/c.jsp">아우터</a></li>
-							<li><a href="./category/d.jsp">신발</a></li>
-							<li><a href="./category/e.jsp">액세서리</a></li>
+					<li><a href="index.jsp">Home</a></li>
+					<li class="dropdown"><a class="dropdown-toggle"
+						id="dropdownMenuButton1" style="" data-bs-toggle="dropdown"
+						aria-expanded="false">Category</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+							<li><a class="dropdown-item" href="./category/a.jsp">상의</a></li>
+							<li><a class="dropdown-item" href="./category/b.jsp">하의</a></li>
+							<li><a class="dropdown-item" href="./category/c.jsp">아우터</a></li>
+							<li><a class="dropdown-item" href="./category/d.jsp">신발</a></li>
+							<li><a class="dropdown-item" href="./category/e.jsp">액세서리</a></li>
 						</ul></li>
-					<li><a href="contact.jsp">Contact</a></li>
+					<li><a href="contact.jsp">About</a></li>
 					<%
 					String loginCheck = (String) session.getAttribute("login");
 					if (loginCheck != null) {
@@ -103,21 +119,29 @@
 					if (idCheck != null) {
 					if (idCheck.equals("admin")) {
 					%>
-					<li><a href="insertItem.jsp">제품등록</a></li>
+					<li><a href="listItem.jsp">Product Lists</a></li>
+					<li><a href="insertItem.jsp"><b>Add a Product</b></a></li>
+					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
 					} else {
 					}
 					} else {
 					}
 					%>
-
 				</ul>
 			</nav>
+			<hr>
 		</div>
-
+<div style="display: none;">
+	<%@ include file="./loginFormSmall.jsp"%>
+</div>
 
 	</header>
 	<!-- END #fh5co-header -->
+
+
+
+
 
 	<div class="panel-body">
 		<div class="row"> 
@@ -147,7 +171,39 @@
 						</tr>
 						<tr>
 							<td>상품이미지</td>
-							<td><input type="file" name="file1"></td>
+							<td><input type="file" id="itemImg" name="file" />
+								<div class="select_img">
+									<img id="imgs" src="" />
+								</div> <script>
+									$("#itemImg")
+											.change(
+													function() {
+														if (this.files
+																&& this.files[0]) {
+															var reader = new FileReader;
+															reader.onload = function(
+																	data) {
+																$(
+																		".select_img img")
+																		.attr(
+																				"src",
+																				data.target.result)
+																		.width(
+																				500);
+															}
+															reader
+																	.readAsDataURL(this.files[0]);
+														}
+													});
+
+									$("#itemImg").change(
+											function() {
+												let img = document
+														.getElementById('imgs')
+												console.log(img)
+
+											});
+								</script></td>
 						</tr>
 						<tr>
 
@@ -175,9 +231,9 @@
 		<div class="container-fluid">
 			<div class="footer-content">
 				<div class="copyright">
-					<small>&copy; 2022 Present. All Rights Reserved. <br>Designed
-						by <a href="http://freehtml5.co/">FreeHTML5.co</a> Images: <a
-						href="http://graphicburger.com/">GraphicBurger</a></small>
+					<small>&copy; 2022 AAC. All Rights Reserved. <br>Project
+						by 3조. <br>전화번호: 02-1234-5678 | 주소: 서울특별시 종로구 삼일대로 385-1.
+					</small>
 				</div>
 				<!-- 
 							<div class="social">

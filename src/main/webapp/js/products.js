@@ -12,8 +12,6 @@ function productInfo() {
 			$("#itemName").html(items.itemName)
 			$("#itemPrice").html(items.itemPrice)
 			$("#itemContent").html(items.itemcontent)
-			debugger
-
 		}
 
 	})

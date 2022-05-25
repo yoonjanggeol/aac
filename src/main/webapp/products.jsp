@@ -1,3 +1,9 @@
+<%@page import="javax.tools.DocumentationTool.Location"%>
+<%@page import="java.io.Console"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,7 +31,7 @@
 <meta name="twitter:card" content="" />
 
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-<link rel="shortcut icon" href="../favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
 
 <link
 	href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900'
@@ -35,17 +41,17 @@
 	rel="stylesheet">
 
 <!-- Animate.css -->
-<link rel="stylesheet" href="../css/animate.css">
+<link rel="stylesheet" href="css/animate.css">
 <!-- Icomoon Icon Fonts-->
-<link rel="stylesheet" href="../css/icomoon.css">
+<link rel="stylesheet" href="css/icomoon.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="../css/bootstrap.css">
-<!-- Superfish -->
-<link rel="stylesheet" href="../css/superfish.css">
-<!-- Flexslider  -->
-<link rel="stylesheet" href="../css/flexslider.css">
 
-<link rel="stylesheet" href="../css/style.css">
+<!-- Superfish -->
+<link rel="stylesheet" href="css/superfish.css">
+<!-- Flexslider  -->
+<link rel="stylesheet" href="css/flexslider.css">
+
+<link rel="stylesheet" href="css/style.css">
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
@@ -59,50 +65,87 @@
 	crossorigin="anonymous"></script>
 
 <!-- Modernizr JS -->
-<script src="../js/modernizr-2.6.2.min.js"></script>
+<script src="js/modernizr-2.6.2.min.js"></script>
 <!-- FOR IE9 below -->
 <!--[if lt IE 9]>
-		<script src="js/respond.min.js"></script>
-		<![endif]-->
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+<!-- login.register script -->
+
+
 <script type="text/javascript" src="./js/products.js"></script>
 <script type="text/javascript" src="./js/admin.js"></script>
 <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
-
-</head>
+<script type="text/javascript" src="./js/admin.js"></script>
 <script>
-	window.onload = function() {
-		productInfo()
-
-	}
+		window.onload = function() {
+			productInfo()
+	
+		}
 </script>
 
+<style type="text/css">
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+</style>
+</head>
+
 <body>
+
 	<header id="fh5co-header" role="banner">
 		<div class="container text-center">
 			<div id="fh5co-logo">
-				<a href="../index.jsp"><img src="../images/logo.png"
-					alt="AAC Free HTML5 Bootstrap Template"></a>
+				<a href="index.jsp"><img src="images/logo.png" alt="logo"></a>
 			</div>
 			<nav>
+				<hr>
 				<ul>
-					<li><a href="../about.jsp" class="text-decoration-none">About</a></li>
-					<li class="dropdown"><a href="#"
-						class="dropdown-toggle text-decoration-none"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false"> Category </a>
+					<li><a href="index.jsp">Home</a></li>
+					<li class="dropdown"><a class="dropdown-toggle"
+						id="dropdownMenuButton1" style="" data-bs-toggle="dropdown"
+						aria-expanded="false">Category</a>
 						<ul class="dropdown-menu">
-							<li><a href="../category/a.jsp" class="text-decoration-none">상의</a></li>
-							<li><a href="../category/b.jsp" class="text-decoration-none">하의</a></li>
-							<li><a href="../category/c.jsp" class="text-decoration-none">아우터</a></li>
-							<li><a href="../category/d.jsp" class="text-decoration-none">신발</a></li>
-							<li><a href="../category/e.jsp" class="text-decoration-none">액세서리</a></li>
+							<li><a href="./category/a.jsp">상의</a></li>
+							<li><a href="./category/b.jsp">하의</a></li>
+							<li><a href="./category/c.jsp">아우터</a></li>
+							<li><a href="./category/d.jsp">신발</a></li>
+							<li><a href="./category/e.jsp">액세서리</a></li>
 						</ul></li>
-					<li><a href="../contact.jsp" class="text-decoration-none">Contact</a></li>
-					<li><a href="../loginForm.jsp" class="text-decoration-none">Login/Sign
-							Up</a></li>
+					<li><a href="contact.jsp">About</a></li>
+					<%
+						String loginCheck = (String) session.getAttribute("login");
+						if(loginCheck != null) {
+					%>
+
+					<%
+						} else {
+					 %>
+					<li><a href="loginForm.jsp">Login/Sign Up</a></li>
+
+					<%
+						}
+						String idCheck = (String) session.getAttribute("id");
+						if(idCheck != null) {
+							if(idCheck.equals("admin")) {
+					%>
+
+					<li><a href="listItem.jsp">Product Lists</a></li>
+					<li><a href="insertItem.jsp">Add a Product</a></li>
+					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+					<%
+							} else {}
+						} else {}
+					%>
 				</ul>
 			</nav>
+			<hr>
 		</div>
+<div style="display: none;">
+	<%@ include file="./loginFormSmall.jsp"%>
+</div>
 	</header>
 	<!-- END #fh5co-header -->
 
@@ -113,15 +156,29 @@
 				<div class="col-md-5">
 					<div id="carouselExampleIndicators"
 						class="carousel carousel-dark slide" data-bs-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to="0" class="active"></li>
+							<li data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to="1"></li>
+							<li data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to="2"></li>
+						</ol>
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="../images/img_1.jpg" class="d-block w-100" alt="...">
+								<img
+									src="http://earlyadopter.godohosting.com/goods_earlyadopter_godo_co_kr/162/1578368250170m0.jpg?cache_ver=202012274"
+									class="d-block w-100" alt="...">
 							</div>
 							<div class="carousel-item">
-								<img src="../images/img_2.jpg" class="d-block w-100" alt="...">
+								<img
+									src="http://earlyadopter.godohosting.com/goods_earlyadopter_godo_co_kr/162/1578368250813m2.jpg?cache_ver=202012274"
+									class="d-block w-100" alt="...">
 							</div>
 							<div class="carousel-item">
-								<img src="../images/img_3.jpg" class="d-block w-100" alt="...">
+								<img
+									src="http://earlyadopter.godohosting.com/goods_earlyadopter_godo_co_kr/162/1578368250328m4.jpg?cache_ver=202012274"
+									class="d-block w-100" alt="...">
 							</div>
 						</div>
 						<a class="carousel-control-prev" href="#carouselExampleIndicators"
@@ -139,16 +196,11 @@
 				<div class="col-md-7">
 					<div class="card shadow-sm">
 						<div class="card-body">
-							<div id="ITEMNAME">
-								<h5 class="card-title" id="itemName"></h5>
-							</div>
-							<div id="ITEMPRICE">
-								<h5 class="card-title pt-3 pb-3 border-top" id="itemPrice"></h5>
-							</div>
-
+							<h5 class="card-title">K70 RGB MK.2 BROWN 기계식 게이밍 키보드 갈축</h5>
+							<h5 class="card-title pt-3 pb-3 border-top">219,000원</h5>
 							<p class="card-text border-top pt-3">
-								<span class="badge bg-dark">신규</span> <span
-									class="badge bg-dark">인기</span> <span class="badge bg-dark">세일</span>
+								<span class="badge bg-dark">전자제품</span> <span
+									class="badge bg-dark">컴퓨터</span> <span class="badge bg-dark">악세사리</span>
 							</p>
 							<p class="card-text pb-3">배송비 2,500원 | 도서산간(제주도) 배송비 추가
 								5,000원 | 택배배송 | 5일 이내 출고 (주말,공휴일 제외)</p>
@@ -171,7 +223,7 @@
 									<h3>총 상품 금액</h3>
 								</div>
 								<div class="col-6" style="text-align: right;">
-									<h3>19,000</h3>
+									<h3>219,000</h3>
 								</div>
 							</div>
 							<div class="d-flex justify-content-between align-items-center">
@@ -182,7 +234,6 @@
 								<div class="col-6 d-grid p-1">
 									<button type="button" class="btn btn-lg btn-danger">주문하기</button>
 								</div>
-
 							</div>
 						</div>
 					</div>
@@ -190,38 +241,34 @@
 			</div>
 			<div class="row">
 				<div class="col-12">
-					<img src="../images/img_20.jpg" />
+					<img
+						src="http://earlyadopter.godohosting.com/goods_earlyadopter_godo_co_kr/162/0ac90345448ccd5c.jpg"
+						class="img-fluid" />
 				</div>
 			</div>
 		</div>
 	</main>
 
 
-	<!-- footer -->
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container-fluid">
 			<div class="footer-content">
 				<div class="copyright">
-					<small>&copy; 2022 AAC. All Rights Reserved. <br>Designed
-						by <a href="http://freehtml5.co/">FreeHTML5.co</a> Images: <a
-						href="http://graphicburger.com/">GraphicBurger</a></small>
+					<small>&copy; 2022 AAC. All Rights Reserved. <br>Project
+						by 3조. <br>전화번호: 02-1234-5678 | 주소: 서울특별시 종로구 삼일대로 385-1
+					</small>
 				</div>
-				<!-- 
-							<div class="social">
-								<a href="#"><i class="icon-facebook3"></i></a>
-								<a href="#"><i class="icon-instagram2"></i></a>
-								<a href="#"><i class="icon-linkedin2"></i></a>
-							</div>
-						-->
 			</div>
 		</div>
 	</footer>
 	<!-- END #fh5co-footer -->
 
+
+
 	<!-- jQuery -->
 	<script src="../js/jquery.min.js"></script>
 	<!-- Bootstrap -->
-	<script src="../js/bootstrap.min.js"></script>
+
 	<!-- masonry -->
 	<script src="../js/jquery.masonry.min.js"></script>
 	<!-- MAIN JS -->
@@ -230,3 +277,14 @@
 </body>
 </html>
 
+
+
+
+
+
+
+
+
+
+
+>
