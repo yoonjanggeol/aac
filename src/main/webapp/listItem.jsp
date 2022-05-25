@@ -45,6 +45,24 @@ a {
 	text-decoration: none;
 	cursor: pointer;
 }
+
+table {
+	width: 76%;
+	margin: 0 auto;
+	border: solid 1px black;
+	text-align: center;
+	margin: 0 auto;
+}
+
+th, td {
+	border: solid 1px black;
+}
+
+.img_class img {
+	top: 0;
+	left: 0;
+	width: 20%;
+}
 </style>
 
 
@@ -108,16 +126,24 @@ a {
 		</div>
 
 		<div style="display: none;">
-	<%@ include file="./loginFormSmall.jsp"%>
-</div>
+			<%@ include file="./loginFormSmall.jsp"%>
+		</div>
 
 	</header>
 	<!-- END #fh5co-header -->
 
-	<table style="margin: 0 auto; border: solid 1px black">
+	<table>
+		<colgroup>
+			<col width="6%">
+			<col width="6%">
+			<col width="14%">
+			<col width="8%">
+			<col width="14%">
+			<col width="100%">
+		</colgroup>
 		<thead>
 			<tr>
-				<th colspan="3">상품목록</th>
+				<th colspan="6">상품목록</th>
 			</tr>
 			<tr>
 				<th>상품번호</th>
@@ -125,6 +151,7 @@ a {
 				<th>상품명</th>
 				<th>상품가격</th>
 				<th>상품설명</th>
+				<th>상품이미지</th>
 			</tr>
 		</thead>
 

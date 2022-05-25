@@ -1,5 +1,5 @@
 // 상품등록 함수
-function insertItem() {
+/*function insertItem() {
 	let itemType = $('#itemType').val();
 	let itemName = $('#itemName').val();
 	let itemPrice = $('#itemPrice').val();
@@ -22,7 +22,7 @@ function insertItem() {
 			}
 		}
 	})
-}
+}*/
 
 // 상품목록 함수
 function listItem() {
@@ -41,7 +41,9 @@ function listItem() {
 					+ "<td>" + data.itemName + "</td>"
 					+ "<td>" + data.itemPrice + "</td>"
 					+ "<td>" + data.itemcontent + "</td>"
-					+ "</tr>";
+					+ "<td class='img_class'><img src=" + data.itemImg + "></td>"
+					+ "<td></td>";
+				+ "</tr>";
 				$("#tbody").append(html);
 			})
 
@@ -49,19 +51,6 @@ function listItem() {
 
 	})
 }
-
-// 이미지 이름 DB에 itemImg에 넣기
-
-$("#itemImg").change(function(){
-  	let img = document.getElementsByName('itemImg')[0].src
-  	console.log(img) 
-  	
-});
-
-
-
-
-
 
 
 
