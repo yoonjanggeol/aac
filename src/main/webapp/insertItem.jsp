@@ -124,7 +124,7 @@ a {
 
 	<!-- END #fh5co-header -->
 	<div class="panel-body">
-		<div class="row">
+		<div class="row"> 
 			<div class="col-lg-12">
 				<h2>상품 등록</h2>
 				<!-- 파일업로드를 위해 추가하는 타입 -->
