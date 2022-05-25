@@ -1,25 +1,20 @@
 package com.tjoeun.admin;
 
 import java.io.IOException;
-import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.tomcat.jni.File;
-
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 
-@WebServlet("/listItem")
-public class ListItem extends HttpServlet {
+@WebServlet("/searchItem")
+public class SearchItem extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ListItem() {
+	public SearchItem() {
 		super();
 	}
 
@@ -40,13 +35,10 @@ public class ListItem extends HttpServlet {
 		// System.out.println("UserRegister 서블릿의 actionDo() 메소드 실행");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
-
-		List<AdminVO> list = new AdminDAO().listItem();
-		for (int i = 0; i < list.size(); i++) {
-			list.get(i).setItemImg("./upload/"+list.get(i).getItemImg());
-		}
-		if (list != null) {
-			String json = new Gson().toJson(list);
+		String itemNum = request.getParameter("itemNum").trim();
+		AdminVO vo = new AdminDAO().searchItem(Integer.parseInt(itemNum));
+		if (vo != null) {
+			String json = new Gson().toJson(vo);
 			response.getWriter().write(json);
 		}
 	}

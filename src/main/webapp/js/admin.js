@@ -1,4 +1,5 @@
 // 상품등록 함수
+// form.submit사용으로 인한 주석처리
 function insertItem() {
 	let itemType = $('#itemType').val();
 	let itemName = $('#itemName').val();

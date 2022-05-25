@@ -1,25 +1,18 @@
 package com.tjoeun.admin;
 
 import java.io.IOException;
-import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.tomcat.jni.File;
-
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-
-@WebServlet("/listItem")
-public class ListItem extends HttpServlet {
+@WebServlet("/modifyItem")
+public class ModifyItem extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ListItem() {
+	public ModifyItem() {
 		super();
 	}
 
@@ -41,13 +34,24 @@ public class ListItem extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 
-		List<AdminVO> list = new AdminDAO().listItem();
-		for (int i = 0; i < list.size(); i++) {
-			list.get(i).setItemImg("./upload/"+list.get(i).getItemImg());
-		}
-		if (list != null) {
-			String json = new Gson().toJson(list);
-			response.getWriter().write(json);
+		String itemNum = request.getParameter("itemNum").trim();
+		String itemType = request.getParameter("itemType").trim();
+		String itemName = request.getParameter("itemName").trim();
+		String itemPrice = request.getParameter("itemPrice").trim();
+		String itemContent = request.getParameter("itemContent").trim();
+		AdminVO vo = new AdminVO();
+		vo.setItemNum(Integer.parseInt(itemNum));
+		vo.setItemType(itemType);
+		vo.setItemName(itemName);
+		vo.setItemPrice(itemPrice);
+		vo.setItemcontent(itemContent);
+		try {
+			int result = new AdminDAO().modifyItem(vo);
+			if (result == 1) {
+				response.getWriter().write("1");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }
