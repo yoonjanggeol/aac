@@ -4,8 +4,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,8 +17,7 @@
 <title>Welcome to AAC!!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-<meta name="keywords"
-	content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 <meta name="author" content="FREEHTML5.CO" />
 
 
@@ -37,12 +35,8 @@
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="favicon.ico">
 
-<link
-	href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900'
-	rel='stylesheet' type='text/css'>
-<link
-	href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700"
-	rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
 
 <!-- Animate.css -->
 <link rel="stylesheet" href="css/animate.css">
@@ -57,16 +51,9 @@
 
 <link rel="stylesheet" href="css/style.css">
 <!-- 외부파일 -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-	crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 <style type="text/css">
 a {
@@ -94,9 +81,7 @@ a {
 				<hr>
 				<ul>
 					<li><a href="index.jsp">Home</a></li>
-					<li class="dropdown"><a class="dropdown-toggle"
-						id="dropdownMenuButton1" style="" data-bs-toggle="dropdown"
-						aria-expanded="false">Category</a>
+					<li class="dropdown"><a class="dropdown-toggle" id="dropdownMenuButton1" style="" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
 						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 							<li><a class="dropdown-item" href="./category/a.jsp">상의</a></li>
 							<li><a class="dropdown-item" href="./category/b.jsp">하의</a></li>
@@ -132,9 +117,9 @@ a {
 			</nav>
 			<hr>
 		</div>
-<div style="display: none;">
-	<%@ include file="./loginFormSmall.jsp"%>
-</div>
+		<div style="display: none;">
+			<%@ include file="./loginFormSmall.jsp"%>
+		</div>
 
 	</header>
 	<!-- END #fh5co-header -->
@@ -144,37 +129,45 @@ a {
 
 
 	<div class="panel-body">
-		<div class="row"> 
+		<div class="row">
 			<div class="col-lg-12">
-				<form id="login-form" action="?" method="post" role="form"
-					style="display: block;">
+				<form id="login-form" action="?" method="post" role="form" style="display: block;">
 					<h2>상품 등록</h2>
 					<!-- 파일업로드를 위해 추가하는 타입 -->
 
 					<table>
 						<tr>
 							<td>상품종류</td>
-							<td><input id="itemType"></td>
+							<td>
+								<input id="itemType">
+							</td>
 						</tr>
 						<tr>
 							<td>상품명</td>
-							<td><input id="itemName"></td>
+							<td>
+								<input id="itemName">
+							</td>
 						</tr>
 						<tr>
 							<td>가격</td>
-							<td><input id="itemPrice"></td>
+							<td>
+								<input id="itemPrice">
+							</td>
 						</tr>
 						<tr>
 							<td>상품설명</td>
-							<td><textarea rows="5" cols="60" name="description"
-									id="itemContent"></textarea></td>
+							<td>
+								<textarea rows="5" cols="60" name="description" id="itemContent"></textarea>
+							</td>
 						</tr>
 						<tr>
 							<td>상품이미지</td>
-							<td><input type="file" id="itemImg" name="file" />
+							<td>
+								<input type="file" id="itemImg" name="file" />
 								<div class="select_img">
 									<img id="imgs" src="" />
-								</div> <script>
+								</div>
+								<script>
 									$("#itemImg")
 											.change(
 													function() {
@@ -203,7 +196,8 @@ a {
 												console.log(img)
 
 											});
-								</script></td>
+								</script>
+							</td>
 						</tr>
 						<tr>
 
@@ -212,8 +206,7 @@ a {
 						                    onclick="product_write()"> <!-- "등록" 버튼을 누르면 위쪽에 있는 스크립트문에서 product_write()함수가 호출되서 실행되 insert.do페이지로 자료를 전송한다. -->
 						                    <input type="button" value="목록"
 						                    onclick="location.href='${path}/admin/product/list.do'"> <!-- "목록 버튼을 누르면 list.do페이지로 이동" --> --%>
-								<input class="btn btn-primary" type="button" value="상품등록"
-								onclick="insertItem()" />
+								<input class="btn btn-primary" type="button" value="상품등록" onclick="insertItem()" />
 							</td>
 						</tr>
 					</table>
@@ -231,8 +224,7 @@ a {
 		<div class="container-fluid">
 			<div class="footer-content">
 				<div class="copyright">
-					<small>&copy; 2022 AAC. All Rights Reserved. <br>Project
-						by 3조. <br>전화번호: 02-1234-5678 | 주소: 서울특별시 종로구 삼일대로 385-1.
+					<small>&copy; 2022 AAC. All Rights Reserved. <br>Project by 3조. <br>전화번호: 02-1234-5678 | 주소: 서울특별시 종로구 삼일대로 385-1.
 					</small>
 				</div>
 				<!-- 
