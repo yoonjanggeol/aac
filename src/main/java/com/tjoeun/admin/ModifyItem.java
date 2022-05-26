@@ -37,14 +37,14 @@ public class ModifyItem extends HttpServlet {
 		String itemNum = request.getParameter("itemNum").trim();
 		String itemType = request.getParameter("itemType").trim();
 		String itemName = request.getParameter("itemName").trim();
-		String itemPrice = request.getParameter("itemPrice").trim();
+		int itemPrice = Integer.parseInt(request.getParameter("itemPrice").trim());
 		String itemContent = request.getParameter("itemContent").trim();
 		AdminVO vo = new AdminVO();
 		vo.setItemNum(Integer.parseInt(itemNum));
 		vo.setItemType(itemType);
 		vo.setItemName(itemName);
 		vo.setItemPrice(itemPrice);
-		vo.setItemcontent(itemContent);
+		vo.setItemContent(itemContent);
 		try {
 			int result = new AdminDAO().modifyItem(vo);
 			if (result == 1) {

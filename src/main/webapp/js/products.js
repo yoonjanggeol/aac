@@ -9,9 +9,11 @@ function productInfo() {
 		},
 		success: function(res) {
 			var items = JSON.parse(res);
+			$("#itemNum").html(items.itemNum)
 			$("#itemName").html(items.itemName)
 			$("#itemPrice").html(items.itemPrice)
-			$("#itemContent").html(items.itemcontent)
+			$("#itemContent").html(items.itemContent)
+			$("#itemType").html(items.itemType)
 		}
 
 	})

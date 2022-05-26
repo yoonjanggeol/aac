@@ -1,5 +1,5 @@
 // 상품등록 함수
-/*function insertItem() {
+function insertItem() {
 	let itemType = $('#itemType').val();
 	let itemName = $('#itemName').val();
 	let itemPrice = $('#itemPrice').val();
@@ -22,7 +22,7 @@
 			}
 		}
 	})
-}*/
+}
 
 // 상품목록 함수
 function listItem() {
@@ -40,7 +40,7 @@ function listItem() {
 					+ "<td>" + data.itemType + "</td>"
 					+ "<td>" + data.itemName + "</td>"
 					+ "<td>" + data.itemPrice + "</td>"
-					+ "<td>" + data.itemcontent + "</td>"
+					+ "<td>" + data.itemContent + "</td>"
 					+ "<td class='img_class'><img src=" + data.itemImg + "></td>"
 					+ "<td></td>";
 				+ "</tr>";
@@ -51,22 +51,38 @@ function listItem() {
 
 	})
 }
+// 상품목록 함수
+function listItem() {
+	$.ajax({
+		type: 'GET',
+		url: './product',
+		success: function(res) {
+			$("#itemImgP").empty();
+			var items = JSON.parse(res);
+			var html =  "<img class='d-block w-100' src=" + items.itemImg + ">";
+			
+			$("#itemImgP").append(html);
+			
 
+		}
+
+	})
+}
 
 
 // 관리자 페이지 진입
 function goAdminPage() {
-	location.href = "/z_aac/admin_login_welcome.jsp"
+	location.href = "/aac/admin_login_welcome.jsp"
 }
 
 // 상품수정 페이지 진입
 function goModifyItem() {
-	location.href = "/z_aac/modifyItem.jsp"
+	location.href = "/aac/modifyItem.jsp"
 }
 
 // 상품 정보를 product.jsp에 입력하기
 function goProduct(dataNum) {
-	location.href = "/z_aac/products.jsp?pNum=" + dataNum;
+	location.href = "/aac/products.jsp?pNum=" + dataNum;
 }
 
 // 상품수정페이지 상품번호 검색

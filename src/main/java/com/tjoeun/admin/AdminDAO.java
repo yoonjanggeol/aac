@@ -17,7 +17,7 @@ public class AdminDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			conn = DriverManager.getConnection(url, "vanitas", "0000");
+			conn = DriverManager.getConnection(url, "tjoeunit", "0000");
 			System.out.println("연결성공: " + conn);
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 클래스가 없거나 읽어올 수 없습니다.");
@@ -29,12 +29,13 @@ public class AdminDAO {
 	public int insertItem(AdminVO vo) {
 		System.out.println("adminDAO 클래스의 insertItem() 메소드");
 		try {
-			String sql = "insert into AACITEMLIST (ITEMNUM, ITEMTYPE, ITEMNAME, ITEMPRICE, ITEMCONTENT) values (SEQ_ITEM_NUM.NEXTVAL, ?, ?, ?, ?)";
+			String sql = "insert into AACITEMLIST (ITEMNUM, ITEMNAME, ITEMPRICE, ITEMCONTENT, ITEMTYPE, ITEMIMG) values (SEQ_ITEM_NUM.NEXTVAL, ?, ?, ?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, vo.getItemType());
-			pstmt.setString(2, vo.getItemName());
-			pstmt.setString(3, vo.getItemPrice());
-			pstmt.setString(4, vo.getItemcontent());
+			pstmt.setString(1, vo.getItemName());
+			pstmt.setInt(2, vo.getItemPrice());
+			pstmt.setString(3, vo.getItemContent());
+			pstmt.setString(4, vo.getItemType());
+			pstmt.setString(5, vo.getItemImg());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -53,9 +54,10 @@ public class AdminDAO {
 				AdminVO vo = new AdminVO();
 				vo.setItemNum(rs.getInt("ITEMNUM"));
 				vo.setItemName(rs.getString("ITEMNAME"));
-				vo.setItemPrice(rs.getString("ITEMPRICE"));
-				vo.setItemcontent(rs.getString("ITEMCONTENT"));
+				vo.setItemPrice(rs.getInt("ITEMPRICE"));
+				vo.setItemContent(rs.getString("ITEMCONTENT"));
 				vo.setItemType(rs.getString("ITEMTYPE"));
+				vo.setItemImg(rs.getString("ITEMIMG"));
 				voList.add(vo);
 			}
 			return voList;
@@ -76,8 +78,9 @@ public class AdminDAO {
 			while (rs.next()) {
 				dbVo.setItemNum(rs.getInt("ITEMNUM"));
 				dbVo.setItemName(rs.getString("ITEMNAME"));
-				dbVo.setItemPrice(rs.getString("ITEMPRICE"));
-				dbVo.setItemcontent(rs.getString("ITEMCONTENT"));
+				dbVo.setItemPrice(rs.getInt("ITEMPRICE"));
+				dbVo.setItemContent(rs.getString("ITEMCONTENT"));
+				dbVo.setItemType(rs.getString("ITEMTYPE"));
 			}
 			return dbVo;
 		} catch (Exception e) {
@@ -97,8 +100,8 @@ public class AdminDAO {
 			while (rs.next()) {
 				dbVo.setItemNum(rs.getInt("ITEMNUM"));
 				dbVo.setItemName(rs.getString("ITEMNAME"));
-				dbVo.setItemPrice(rs.getString("ITEMPRICE"));
-				dbVo.setItemcontent(rs.getString("ITEMCONTENT"));
+				dbVo.setItemPrice(rs.getInt("ITEMPRICE"));
+				dbVo.setItemContent(rs.getString("ITEMCONTENT"));
 				dbVo.setItemType(rs.getString("ITEMTYPE"));
 			}
 			return dbVo;
@@ -115,8 +118,8 @@ public class AdminDAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getItemType());
 			pstmt.setString(2, vo.getItemName());
-			pstmt.setString(3, vo.getItemPrice());
-			pstmt.setString(4, vo.getItemcontent());
+			pstmt.setInt(3, vo.getItemPrice());
+			pstmt.setString(4, vo.getItemContent());
 			pstmt.setInt(5, vo.getItemNum());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {

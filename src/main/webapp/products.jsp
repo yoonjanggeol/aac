@@ -77,7 +77,7 @@
 <script type="text/javascript" src="./js/products.js"></script>
 <script type="text/javascript" src="./js/admin.js"></script>
 <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="./js/admin.js"></script>
+<script type="text/javascript" src="./js/shoppingList.js"></script>
 <script>
 		window.onload = function() {
 			productInfo()
@@ -164,12 +164,12 @@ a {
 							<li data-bs-target="#carouselExampleIndicators"
 								data-bs-slide-to="2"></li>
 						</ol>
+							
 						<div class="carousel-inner">
-							<div class="carousel-item active">
-								<img
-									src="http://earlyadopter.godohosting.com/goods_earlyadopter_godo_co_kr/162/1578368250170m0.jpg?cache_ver=202012274"
-									class="d-block w-100" alt="...">
+							<div class="carousel-item active" id="itemImgP">
+								<img src=""	class="d-block w-100" alt="...">
 							</div>
+							
 							<div class="carousel-item">
 								<img
 									src="http://earlyadopter.godohosting.com/goods_earlyadopter_godo_co_kr/162/1578368250813m2.jpg?cache_ver=202012274"
@@ -196,12 +196,28 @@ a {
 				<div class="col-md-7">
 					<div class="card shadow-sm">
 						<div class="card-body">
-							<h5 class="card-title">K70 RGB MK.2 BROWN 기계식 게이밍 키보드 갈축</h5>
-							<h5 class="card-title pt-3 pb-3 border-top">219,000원</h5>
+						
+							<!-- 제품 번호 숨긴상태로 불러올 태그 위치 -->
+							<div style="display: none;" id="itemNum" ></div>
+																
+							<!-- 제품 이름 불러올 태그 위치 -->
+							<h5 class="card-title" id="itemName"></h5>
+							
+							<!-- 제품 가격 불러올 태그 위치 -->
+							<h5 class="card-title pt-3 pb-3 border-top" id="itemPrice"></h5>
+							
+							<!-- 제품 내용 불러올 태그 위치 -->
+							<p class="card-text border-top pt-3" id="itemContent"></p>
+							
+							<!-- 제품 종류 -->
 							<p class="card-text border-top pt-3">
-								<span class="badge bg-dark">전자제품</span> <span
-									class="badge bg-dark">컴퓨터</span> <span class="badge bg-dark">악세사리</span>
+								<span class="badge bg-dark" id="itemType"></span> 
 							</p>
+							
+							
+							
+							
+							
 							<p class="card-text pb-3">배송비 2,500원 | 도서산간(제주도) 배송비 추가
 								5,000원 | 택배배송 | 5일 이내 출고 (주말,공휴일 제외)</p>
 							<p class="card-text border-top pb-3">
@@ -228,24 +244,26 @@ a {
 							</div>
 							<div class="d-flex justify-content-between align-items-center">
 								<div class="col-6 d-grid p-1">
-									<button type="button" class="btn btn-lg btn-dark">장바구니
+									<button type="button" class="btn btn-lg btn-dark" onclick="selectItem()">장바구니
 										담기</button>
 								</div>
 								<div class="col-6 d-grid p-1">
-									<button type="button" class="btn btn-lg btn-danger">주문하기</button>
+									<button type="button" class="btn btn-lg btn-danger" onclick="location.href='shoppingList.jsp'">장바구니 보기</button>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<!-- 상세이미지
 			<div class="row">
 				<div class="col-12">
 					<img
 						src="http://earlyadopter.godohosting.com/goods_earlyadopter_godo_co_kr/162/0ac90345448ccd5c.jpg"
 						class="img-fluid" />
 				</div>
-			</div>
+			</div> 
+			-->
 		</div>
 	</main>
 
@@ -276,15 +294,3 @@ a {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
->

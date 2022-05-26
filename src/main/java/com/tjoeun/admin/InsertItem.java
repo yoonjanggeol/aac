@@ -80,23 +80,23 @@ public class InsertItem extends HttpServlet {
 		System.out.println("테이블에 데이터 저장 시작");
 		String itemType = m.getParameter("itemType");
 		String itemName = m.getParameter("itemName");
-		String itemPrice = m.getParameter("itemPrice");
+		int itemPrice = Integer.parseInt(m.getParameter("itemPrice").trim());
 		String itemContent = m.getParameter("description");
 		String itemImg = savedFileName;
 
-		System.out.println(savedFileName);
+		System.out.println(itemImg);
 		System.out.println("상품종류:   " + itemType);
 		System.out.println("상품명:   " + itemName);
 		System.out.println("가격:   " + itemPrice);
 		System.out.println("상품설명:   " + itemContent);
-		System.out.println("파일이름:   " + savedFileName);
+		System.out.println("파일이름:   " + itemImg);
 
 		AdminVO vo = new AdminVO();
 		vo.setItemType(itemType);
 		vo.setItemName(itemName);
 		vo.setItemPrice(itemPrice);
-		vo.setItemcontent(itemContent);
-		vo.setItemImg(savedFileName);
+		vo.setItemContent(itemContent);
+		vo.setItemImg(itemImg);
 		
 		int result = new AdminDAO().insertItem(vo);
 		System.out.println(result);
