@@ -114,7 +114,11 @@ th, td {
 					<li><a href="insertItem.jsp">Add a Product</a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-					} else {
+					} else if(!idCheck.equals("admin")) {
+						%>
+							<li><a href="showListItem.jsp">Show Select Lists</a></li>
+							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+						<%
 					}
 					} else {
 					}
@@ -131,6 +135,13 @@ th, td {
 
 	</header>
 	<!-- END #fh5co-header -->
+
+
+
+
+
+
+
 
 	<table>
 		<colgroup>

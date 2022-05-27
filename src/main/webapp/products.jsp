@@ -78,7 +78,12 @@
 <script type="text/javascript" src="./js/admin.js"></script>
 <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="./js/shoppingList.js"></script>
-
+<script>
+		window.onload = function() {
+			productInfo()
+	
+		}
+</script>
 
 <style type="text/css">
 a {
@@ -113,12 +118,10 @@ a {
 					<%
 						String loginCheck = (String) session.getAttribute("login");
 						if(loginCheck != null) {
-					%>
-
-					<%
+				
 						} else {
 					 %>
-					<li><a href="loginForm.jsp">Login/Sign Up</a></li>
+						<li><a href="loginForm.jsp">Login/Sign Up</a></li>
 
 					<%
 						}
@@ -131,8 +134,14 @@ a {
 					<li><a href="insertItem.jsp">Add a Product</a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-							} else {}
-						} else {}
+					} else if(!idCheck.equals("admin")) {
+						%>
+							<li><a href="showListItem.jsp">Show Select Lists</a></li>
+							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+						<%
+					}
+					} else {
+					}
 					%>
 				</ul>
 			</nav>
@@ -210,7 +219,9 @@ a {
 							</p>
 							
 							
-							
+							    
+							    
+														
 							
 							
 							<p class="card-text pb-3">배송비 2,500원 | 도서산간(제주도) 배송비 추가
@@ -218,13 +229,13 @@ a {
 							<p class="card-text border-top pb-3">
 							<div class="row">
 								<div class="col-auto">
-									<label class="col-form-label">구매수량</label>
+									<div>구매 수량</div>
 								</div>
 								<div class="col-auto">
 									<div class="input-group">
-										<span class="input-group-text">-</span> <input type="text"
-											class="form-control" style="width: 40px;" value="1">
-										<span class="input-group-text">+</span>
+								        <button type ="button" onclick="fnCalCount('p',this)">+</button>
+								        	<input type="text" id="iCount" name="iCount" value="0" style="text-align:center;"/>
+								        <button type="button" onclick="fnCalCount('m', this)">-</button>										   
 									</div>
 								</div>
 							</div>
@@ -286,11 +297,6 @@ a {
 	<script src="../js/jquery.masonry.min.js"></script>
 	<!-- MAIN JS -->
 	<script src="../js/main.js"></script>
-<script>
-		window.onload = function() {
-			productInfo()
-	
-		}
-</script>
+
 </body>
 </html>

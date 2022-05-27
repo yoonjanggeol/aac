@@ -11,7 +11,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Welcome to AAC!!</title>
+<title>장바구니 페이지</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 <meta name="keywords"
@@ -54,10 +54,35 @@
 <script type="text/javascript" src="./js/shoppingList.js"></script>
 <script>
 	window.onload = function() {
-		productInfo()
+		shoppingItem()
 
 	}
 </script>
+
+<style type="text/css">
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+table {
+	width: 76%;
+	margin: 0 auto;
+	border: solid 1px black;
+	text-align: center;
+	margin: 0 auto;
+}
+
+th, td {
+	border: solid 1px black;
+}
+
+.img_class img {
+	top: 0;
+	left: 0;
+	width: 20%;
+}
+</style>
 
 </head>
 
@@ -87,6 +112,8 @@
 					<%String loginCheck = (String) session.getAttribute("login");
 						if (loginCheck != null) {
 							
+					
+							
 						}else {
 					%>
 						<li><a href="loginForm.jsp">Login/Sign Up</a></li>
@@ -98,15 +125,18 @@
 					%>
 
 								<li><a href="listItem.jsp">Product Lists</a></li>
+								
 								<li><a href="insertItem.jsp">Add a Product</a></li>
 								<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-								} else {
-									
-								}
-							} else {
-								
-							}
+					} else if(!idCheck.equals("admin")) {
+						%>
+							<li><a href="showListItem.jsp">Show Select Lists</a></li>
+							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+						<%
+					}
+					} else {
+					}
 					%>
 
 				</ul>
@@ -124,26 +154,35 @@
 	
 	
 	
-	<table style="margin: 0 auto; border: solid 1px black">
+	<table>
+		<colgroup>
+			<col width="6%">
+			<col width="6%">
+			<col width="14%">
+			<col width="8%">
+			<col width="14%">
+			<col width="80%">
+			<col width="20%">
+		</colgroup>
 		<thead>
 			<tr>
-				<th colspan="3" id="name"></th>
-			</tr>
-			<tr>
-				<td>장바구니</td>
-			</tr>
+				<th colspan="7" id="name">장바구니</th>
+			</tr>			
 			<tr>
 				<th>상품번호</th>
 				<th>상품종류</th>
 				<th>상품명</th>
 				<th>상품가격</th>
 				<th>상품설명</th>
+				<th>상품이미지</th>
+				<th>상품수량</th>
 			</tr>
 		</thead>
 
 		<tbody id="tbody">
 		</tbody>
 	</table>
+	
 	<br>
 	<div style="text-align: center">
 		<button type="button">구매하기</button>
@@ -172,24 +211,27 @@
 		<div class="container-fluid">
 			<div class="footer-content">
 				<div class="copyright">
-					<small>&copy; 2022 Present. All Rights Reserved. <br>Designed
-						by <a href="http://freehtml5.co/">FreeHTML5.co</a> Images: <a
-						href="http://graphicburger.com/">GraphicBurger</a></small>
+					<small>&copy; 2022 AAC. All Rights Reserved. <br>Project
+						by 3조. <br>전화번호: 02-1234-5678 | 주소: 서울특별시 종로구 삼일대로 385-1.
+					</small>
 				</div>
-			
-				<div class="social">
-					<a href="#"><i class="icon-facebook3"></i></a>
-					<a href="#"><i class="icon-instagram2"></i></a>
-					<a href="#"><i class="icon-linkedin2"></i></a>
-				</div>
-					
+
 			</div>
 		</div>
 	</footer>
+	<!-- END #fh5co-footer -->
 
-	<script src="../js/jquery.min.js"></script>
-	<script src="../js/jquery.masonry.min.js"></script>
-	<script src="../js/main.js"></script>
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<!-- masonry -->
+	<script src="js/jquery.masonry.min.js"></script>
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
 
 </body>
 </html>

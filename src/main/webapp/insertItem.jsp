@@ -133,7 +133,11 @@ a {
 					<li><a href="insertItem.jsp"><b>Add a Product</b></a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-					} else {
+					} else if(!idCheck.equals("admin")) {
+						%>
+							<li><a href="showListItem.jsp">Show Select Lists</a></li>
+							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+						<%
 					}
 					} else {
 					}

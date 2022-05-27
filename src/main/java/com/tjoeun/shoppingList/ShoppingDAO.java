@@ -53,11 +53,12 @@ public class ShoppingDAO {
 		return -1;
 	}
 
-	public List<ShoppingVO> listItem() {
+	public List<ShoppingVO> listItem(String id) {
 		System.out.println("shoppingDAO 클래스의 listItem() 메소드");
 		try {
-			String sql = "select * from( select rownum rnum, GG.* from ( select * from shoppinglist order by IDX desc) GG where rownum <= 5)where rownum >= 1";
+			String sql = "select * from(select rownum rnum, GG.* from (select * from shoppinglist where id = ? order by IDX desc) GG where rownum <= 5)where rownum >= 1";
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			List<ShoppingVO> voList = new ArrayList<>();
 			while (rs.next()) {
