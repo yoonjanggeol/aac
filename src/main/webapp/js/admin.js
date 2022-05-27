@@ -41,28 +41,11 @@ function listItem() {
 					+ "<td>" + data.itemName + "</td>"
 					+ "<td>" + data.itemPrice + "</td>"
 					+ "<td>" + data.itemContent + "</td>"
-					+ "<td class='img_class'><img src=" + data.itemImg + "></td>"
+					+ "<td class='img_class'><img class='d-block w-100' src=" + data.itemImg + "></td>"
 					+ "<td></td>";
 				+ "</tr>";
 				$("#tbody").append(html);
 			})
-
-		}
-
-	})
-}
-// 상품목록 함수
-function listItem() {
-	$.ajax({
-		type: 'GET',
-		url: './product',
-		success: function(res) {
-			$("#itemImgP").empty();
-			var items = JSON.parse(res);
-			var html =  "<img class='d-block w-100' src=" + items.itemImg + ">";
-			
-			$("#itemImgP").append(html);
-			
 
 		}
 

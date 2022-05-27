@@ -78,12 +78,7 @@
 <script type="text/javascript" src="./js/admin.js"></script>
 <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="./js/shoppingList.js"></script>
-<script>
-		window.onload = function() {
-			productInfo()
-	
-		}
-</script>
+
 
 <style type="text/css">
 a {
@@ -166,8 +161,8 @@ a {
 						</ol>
 							
 						<div class="carousel-inner">
-							<div class="carousel-item active" id="itemImgP">
-								<img src=""	class="d-block w-100" alt="...">
+							<div class="carousel-item active">
+								<img id="itemImg" src="" class="d-block w-100" alt="...">
 							</div>
 							
 							<div class="carousel-item">
@@ -198,7 +193,7 @@ a {
 						<div class="card-body">
 						
 							<!-- 제품 번호 숨긴상태로 불러올 태그 위치 -->
-							<div style="display: none;" id="itemNum" ></div>
+							<div style="display: none;" id="itemNum"></div>
 																
 							<!-- 제품 이름 불러올 태그 위치 -->
 							<h5 class="card-title" id="itemName"></h5>
@@ -291,6 +286,11 @@ a {
 	<script src="../js/jquery.masonry.min.js"></script>
 	<!-- MAIN JS -->
 	<script src="../js/main.js"></script>
-
+<script>
+		window.onload = function() {
+			productInfo()
+	
+		}
+</script>
 </body>
 </html>

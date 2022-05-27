@@ -81,6 +81,7 @@ public class AdminDAO {
 				dbVo.setItemPrice(rs.getInt("ITEMPRICE"));
 				dbVo.setItemContent(rs.getString("ITEMCONTENT"));
 				dbVo.setItemType(rs.getString("ITEMTYPE"));
+				dbVo.setItemImg(rs.getString("ITEMIMG"));
 			}
 			return dbVo;
 		} catch (Exception e) {

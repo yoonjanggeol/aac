@@ -9,12 +9,15 @@ function productInfo() {
 		},
 		success: function(res) {
 			var items = JSON.parse(res);
-			$("#itemNum").html(items.itemNum)
-			$("#itemName").html(items.itemName)
-			$("#itemPrice").html(items.itemPrice)
-			$("#itemContent").html(items.itemContent)
-			$("#itemType").html(items.itemType)
+			$("#itemNum").html(items.itemNum);
+			$("#itemName").html(items.itemName);
+			$("#itemPrice").html(items.itemPrice);
+			$("#itemContent").html(items.itemContent);
+			$("#itemType").html(items.itemType);
+			console.log(items.itemImg);
+			document.getElementById('#itemImg').setAttribute('src', items.itemImg);
 		}
 
 	})
+	
 }

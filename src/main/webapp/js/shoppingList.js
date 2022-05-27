@@ -1,14 +1,9 @@
 // 장바구니 등록 함수
 function selectItem() {
 	let id = '<%=(String)session.getAttribute("userid")%>';
-	console.log(id)
 	let name = '<%=(String)session.getAttribute("userName")%>';
 	let iNum = document.querySelector('#itemNum').innerText;
-	console.log(iNum)
-	// let iName = $('#itemName').innerText;
 	let iName = document.querySelector('#itemName').innerText;
-	console.log(iName);
-	
 	let iPrice = document.querySelector('#itemPrice').innerText;
 	let iContent = document.querySelector('#itemContent').innerText;
 	let iType = document.querySelector('#itemType').innerText;
