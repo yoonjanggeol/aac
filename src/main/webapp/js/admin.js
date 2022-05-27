@@ -53,6 +53,9 @@ function listItem() {
 }
 
 
+
+
+
 // 관리자 페이지 진입
 function goAdminPage() {
 	location.href = "/aac/admin_login_welcome.jsp"

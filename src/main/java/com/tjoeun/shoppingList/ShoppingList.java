@@ -50,7 +50,6 @@ public class ShoppingList extends HttpServlet {
 		System.out.println(id);
 		String name = session.getAttribute("name").toString(); 
 		System.out.println(name);
-		// ajax로 구현해야함
 		int iNum = Integer.parseInt(request.getParameter("iNum").trim());
 		System.out.println(iNum);
 		String iName = request.getParameter("iName").trim();
@@ -59,6 +58,9 @@ public class ShoppingList extends HttpServlet {
 		String iType = request.getParameter("iType").trim();
 		String iImg = request.getParameter("iImg").trim();
 		int iCount = Integer.parseInt(request.getParameter("iCount").trim());
+		System.out.println(iCount);
+		
+		
 		
 		
 		ShoppingVO vo = new ShoppingVO();

@@ -101,7 +101,7 @@ a {
 					<%
 					String loginCheck = (String) session.getAttribute("login");
 					if (loginCheck != null) {
-
+					
 					} else {
 					%>
 					<li><a href="loginForm.jsp">Login/Sign Up</a></li>
@@ -117,7 +117,11 @@ a {
 					<li><a href="insertItem.jsp">Add a Product</a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-					} else {
+					} else if(!idCheck.equals("admin")) {
+						%>
+							<li><a href="showListItem.jsp">Show Select Lists</a></li>
+							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+						<%
 					}
 					} else {
 					}
