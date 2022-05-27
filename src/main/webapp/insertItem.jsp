@@ -148,7 +148,7 @@ a {
 	</header>
 
 	<!-- END #fh5co-header -->
-	<div class="panel-body">
+	<div class="panel-body" align="center">
 		<div class="row">
 			<div class="col-lg-12">
 				<h2>상품 등록</h2>
@@ -156,7 +156,7 @@ a {
 				<form action="./insertItem" method="post"
 					enctype="multipart/form-data">
 
-					<table>
+					<table align="center">
 						<tr id="imgtr" style="display: none">
 							<td>파일이름</td>
 							<td><input type="text" name="itemImg" id="itemImg" readonly></td>
