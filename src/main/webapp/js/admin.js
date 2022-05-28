@@ -41,8 +41,7 @@ function listItem() {
 					+ "<td>" + data.itemName + "</td>"
 					+ "<td>" + data.itemPrice + "</td>"
 					+ "<td>" + data.itemContent + "</td>"
-					+ "<td class='img_class'><img class='d-block w-100' src=" + data.itemImg + "></td>"
-					+ "<td></td>";
+					+ "<td class='img_class'><img class='d-block w-100' src=" + data.itemImg + "></td>";
 				+ "</tr>";
 				$("#tbody").append(html);
 			})

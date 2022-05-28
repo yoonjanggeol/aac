@@ -129,9 +129,15 @@ a {
 					<li><a href="../insertItem.jsp">Add a Product</a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-									} else {}
-								} else {}
-							%>
+					} else if(!idCheck.equals("admin")) {
+						%>
+							<li><a href="../showListItem.jsp">Cart</a></li>
+							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+						<%
+					}
+					} else {
+					}
+					%>
 
 				</ul>
 			</nav>
@@ -193,7 +199,7 @@ a {
 							<h5 class="card-title">오버핏 무스탕 자켓</h5>
 							<h5 class="card-title pt-3 pb-3 border-top" id="price">143,197원</h5>
 							<p class="card-text border-top pt-3">
-								<span class="badge bg-dark">FREE</span> 
+								<span class="badge bg-dark">JACKETS</span> 
 							</p>
 							<p class="card-text pb-3">콜릿만의 테디베어 털 플리스로 따뜻한 보온성을 유지해줍니다.</p>
 							<p class="card-text border-top pb-3">

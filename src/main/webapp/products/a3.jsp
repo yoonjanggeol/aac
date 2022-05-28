@@ -7,10 +7,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Welcome to AAC!!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 <meta name="keywords"
 	content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-<meta name="author" content="FREEHTML5.CO" />
+
 
 
 <!-- Facebook and Twitter integration -->
@@ -129,9 +128,15 @@ a {
 					<li><a href="../insertItem.jsp">Add a Product</a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-									} else {}
-								} else {}
-							%>
+					} else if(!idCheck.equals("admin")) {
+						%>
+							<li><a href="../showListItem.jsp">Cart</a></li>
+							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+						<%
+					}
+					} else {
+					}
+					%>
 
 				</ul>
 			</nav>
@@ -182,7 +187,7 @@ a {
 							<h5 class="card-title">울 트렌치 코트</h5>
 							<h5 class="card-title pt-3 pb-3 border-top" id="price">146,400원</h5>
 							<p class="card-text border-top pt-3">
-								<span class="badge bg-dark">S</span> <span class="badge bg-dark">M</span>
+								<span class="badge bg-dark">JACKETS</span>
 							</p>
 							<p class="card-text pb-3">하프 기장감으로 체형커버에 탁월하여 인포켓으로 디자인되어
 								고급스러움을 느낄 수 있습니다.</p>

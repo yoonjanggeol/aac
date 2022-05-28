@@ -132,9 +132,15 @@ a {
 					<li><a href="../insertItem.jsp">Add a Product</a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-									} else {}
-								} else {}
-							%>
+					} else if(!idCheck.equals("admin")) {
+						%>
+							<li><a href="../showListItem.jsp">Cart</a></li>
+							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+						<%
+					}
+					} else {
+					}
+					%>
 
 				</ul>
 			</nav>
@@ -142,7 +148,7 @@ a {
 		</div>
 		<div style="display: none;">
 			<%@ include file="../loginFormSmallFolder.jsp"%>
-	</div>
+	</div> 
 	</header>
 	<!-- END #fh5co-header -->
 
@@ -196,8 +202,7 @@ a {
 							<h5 class="card-title">겜빗 스타디움 자켓</h5>
 							<h5 class="card-title pt-3 pb-3 border-top" id="price">.</h5>
 							<p class="card-text border-top pt-3">
-								<span class="badge bg-dark">M</span> <span
-									class="badge bg-dark">L</span> <span class="badge bg-dark">XL</span> <span class="badge bg-dark">2XL</span>
+								<span class="badge bg-dark">JACKETS</span>
 							</p>
 							<p class="card-text pb-3">3M 신슐레이트 충전재로 보온성을 높였으며 가벼운 착용감을 느낄 수 있습니다. 여유있는 오버핏으로 다양한 코디가 가능합니다.</p>
 							<p class="card-text border-top pb-3">

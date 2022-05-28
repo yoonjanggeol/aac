@@ -10,8 +10,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Present &mdash; 100% Free Fully Responsive HTML5 Template
-	by FREEHTML5.co</title>
+<title>About AAC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 <meta name="keywords"
@@ -96,11 +95,11 @@ a {
 						id="dropdownMenuButton1" style="" data-bs-toggle="dropdown"
 						aria-expanded="false">Category</a>
 						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-							<li><a class="dropdown-item" href="../category/a.jsp">상의</a></li>
-							<li><a class="dropdown-item" href="../category/b.jsp">하의</a></li>
-							<li><a class="dropdown-item" href="../category/c.jsp">아우터</a></li>
-							<li><a class="dropdown-item" href="../category/d.jsp">신발</a></li>
-							<li><a class="dropdown-item" href="../category/e.jsp">액세서리</a></li>
+							<li><a class="dropdown-item" href="./category/a.jsp">상의</a></li>
+							<li><a class="dropdown-item" href="./category/b.jsp">하의</a></li>
+							<li><a class="dropdown-item" href="./category/c.jsp">아우터</a></li>
+							<li><a class="dropdown-item" href="./category/d.jsp">신발</a></li>
+							<li><a class="dropdown-item" href="./category/e.jsp">액세서리</a></li>
 						</ul></li>
 					<li><a href="contact.jsp"><b>About</b></a></li>
 					<%
@@ -122,8 +121,13 @@ a {
 					<li><a href="insertItem.jsp">Add a Product</a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-									} else {}
-								} else {}
+									} else if(!idCheck.equals("admin")) {
+										%>
+											<li><a href="showListItem.jsp">Cart</a></li>
+											<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+										<%
+									}
+									}
 							%>
 
 				</ul>

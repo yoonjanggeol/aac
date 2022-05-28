@@ -38,31 +38,122 @@
 <script src="js/modernizr-2.6.2.min.js"></script>
 
 <!-- ajax -->
-<title>상품목록 페이지</title>
+<title>Product Lists</title>
 
 <style type="text/css">
 a {
 	text-decoration: none;
 	cursor: pointer;
 }
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
 
-table {
-	width: 76%;
-	margin: 0 auto;
-	border: solid 1px black;
-	text-align: center;
-	margin: 0 auto;
+body {
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  font-size: 16px;
 }
 
-th, td {
-	border: solid 1px black;
+div.table-title {
+   display: block;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
 }
 
-.img_class img {
-	top: 0;
-	left: 0;
-	width: 20%;
+/*** Table Styles **/
+
+.table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  margin: auto;
+  max-width: 1200px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
 }
+ 
+th {
+  color: #black;
+  background: #ffd6b3;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 500;
+  padding: 10px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:#000;
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+tr:hover td {
+  background: #efffb5;
+  color:#000;
+  border-top: 1px solid #22262e;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+ 
+tr:nth-child(odd) td {
+  background:#e3f6fa;
+}
+ 
+tr:nth-child(odd):hover td {
+  background:#efffb5;
+  color: #000;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  background:#FFFFFF;
+  padding:20px;
+  text-align: center;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+
+
+
 </style>
 
 
@@ -116,7 +207,7 @@ th, td {
 					<%
 					} else if(!idCheck.equals("admin")) {
 						%>
-							<li><a href="showListItem.jsp">Show Select Lists</a></li>
+							<li><a href="showListItem.jsp">Cart</a></li>
 							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 						<%
 					}
@@ -136,33 +227,15 @@ th, td {
 	</header>
 	<!-- END #fh5co-header -->
 
-
-
-
-
-
-
-
-	<table>
-		<colgroup>
-			<col width="6%">
-			<col width="6%">
-			<col width="14%">
-			<col width="8%">
-			<col width="14%">
-			<col width="100%">
-		</colgroup>
+	<table class="table-fill">
 		<thead>
 			<tr>
-				<th colspan="6">상품목록</th>
-			</tr>
-			<tr>
-				<th>상품번호</th>
-				<th>상품종류</th>
-				<th>상품명</th>
-				<th>상품가격</th>
-				<th>상품설명</th>
-				<th>상품이미지</th>
+				<th>Product No.</th>
+				<th>Type</th>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Details</th>
+				<th>Image</th>
 			</tr>
 		</thead>
 
@@ -171,9 +244,10 @@ th, td {
 	</table>
 	<br>
 	<div style="text-align: center">
-		<button type="button" onclick="goAdminPage()">관리자 페이지</button>
-		<button type="button" onclick="goModifyItem()">상품수정 페이지</button>
+		<button type="button" onclick="goAdminPage()" style=" background-color: white; color: black; padding: 7px; border: 3px solid #ffcfba; border-radius: 10px">Administrator Page</button>
+		<button type="button" onclick="goModifyItem()" style=" background-color: white; color: black; padding: 7px; border: 3px solid #ffcfba; border-radius: 10px">Modification Page</button>
 	</div>
+	<br>
 
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container-fluid">

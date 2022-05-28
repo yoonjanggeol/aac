@@ -5,8 +5,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Present &mdash; 100% Free Fully Responsive HTML5 Template
-	by FREEHTML5.co</title>
+<title>Welcome to AAC!!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 <meta name="keywords"
@@ -119,7 +118,7 @@ a {
 					<%
 					} else if(!idCheck.equals("admin")) {
 						%>
-							<li><a href="showListItem.jsp">Show Select Lists</a></li>
+							<li><a href="showListItem.jsp">Cart</a></li>
 							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 						<%
 					}
@@ -249,6 +248,54 @@ a {
 				<a href="products/c4.jsp"> <img src="images/c4.jpg"
 					alt="딥 컬러 와이드 슬랙스" width="300px">
 					<h2>딥 컬러 와이드 슬랙스</h2>
+				</a>
+			</div>
+			<div class="fh5co-project masonry-brick">
+				<a href="products/d1.jsp"> <img src="images/d1.jpg"
+					alt="4CM 키높이 팀버스 하이 워커" width="300px">
+					<h2>4CM 키높이 팀버스 하이 워커</h2>
+				</a>
+			</div>
+			<div class="fh5co-project masonry-brick">
+				<a href="products/d2.jsp"> <img src="images/d2.jpg"
+					alt="허니 더비 슈즈" width="300px">
+					<h2>허니 더비 슈즈</h2>
+				</a>
+			</div>
+			<div class="fh5co-project masonry-brick">
+				<a href="products/d3.jsp"> <img src="images/d3.jpg"
+					alt="뮬 스니커즈" width="300px">
+					<h2>뮬 스니커즈</h2>
+				</a>
+			</div>
+			<div class="fh5co-project masonry-brick">
+				<a href="products/d4.jsp"> <img src="images/d4.jpg"
+					alt="LOVE 레터링 스니커즈" width="300px">
+					<h2>LOVE 레터링 스니커즈</h2>
+				</a>
+			</div>
+			<div class="fh5co-project masonry-brick">
+				<a href="products/e1.jsp"> <img src="images/e1.jpg"
+					alt="이태리 메탈 안경" width="300px">
+					<h2>이태리 메탈 안경</h2>
+				</a>
+			</div>
+			<div class="fh5co-project masonry-brick">
+				<a href="products/e2.jsp"> <img src="images/e2.jpg"
+					alt="플러피 파일럿 모자" width="300px">
+					<h2>플러피 파일럿 모자</h2>
+				</a>
+			</div>
+			<div class="fh5co-project masonry-brick">
+				<a href="products/e3.jsp"> <img src="images/e3.jpg"
+					alt="리미 체크머플러" width="300px">
+					<h2>리미 체크머플러</h2>
+				</a>
+			</div>
+			<div class="fh5co-project masonry-brick">
+				<a href="products/e4.jsp"> <img src="images/e4.jpg"
+					alt="링키 투웨이백" width="300px">
+					<h2>링키 투웨이백</h2>
 				</a>
 			</div>
 		</div>

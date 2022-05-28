@@ -129,9 +129,15 @@ a {
 					<li><a href="../insertItem.jsp">Add a Product</a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-									} else {}
-								} else {}
-							%>
+					} else if(!idCheck.equals("admin")) {
+						%>
+							<li><a href="../showListItem.jsp">Cart</a></li>
+							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+						<%
+					}
+					} else {
+					}
+					%>
 
 				</ul>
 			</nav>

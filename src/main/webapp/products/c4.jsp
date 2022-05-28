@@ -129,9 +129,15 @@ a {
 					<li><a href="../insertItem.jsp">Add a Product</a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-									} else {}
-								} else {}
-							%>
+					} else if(!idCheck.equals("admin")) {
+						%>
+							<li><a href="../showListItem.jsp">Cart</a></li>
+							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+						<%
+					}
+					} else {
+					}
+					%>
 
 				</ul>
 			</nav>
@@ -193,7 +199,7 @@ a {
 							<h5 class="card-title">딥 컬러 와이드 슬랙스</h5>
 							<h5 class="card-title pt-3 pb-3 border-top" id="price">54,400원</h5>
 							<p class="card-text border-top pt-3">
-								<span class="badge bg-dark">FREE</span>
+								<span class="badge bg-dark">PANTS</span>
 							</p>
 							<p class="card-text pb-3">한여름까지 착용하기 좋은 라이트한 두께감의 면 100% 원단으로 제작된 팬츠입니다. 워싱을 통해 부드러운 촉감과 세탁시 수축이 적습니다.</p>
 							<p class="card-text border-top pb-3">

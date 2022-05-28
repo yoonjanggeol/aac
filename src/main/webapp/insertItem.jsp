@@ -26,7 +26,7 @@
 	}
 </script>
 
-<title>Welcome to AAC!!</title>
+<title>Add a Product</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 <meta name="keywords"
@@ -135,7 +135,7 @@ a {
 					<%
 					} else if(!idCheck.equals("admin")) {
 						%>
-							<li><a href="showListItem.jsp">Show Select Lists</a></li>
+							<li><a href="showListItem.jsp">Cart</a></li>
 							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 						<%
 					}
@@ -155,30 +155,30 @@ a {
 	<div class="panel-body" align="center">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2>상품 등록</h2>
+				<h2>Add a Product</h2>
 				<!-- 파일업로드를 위해 추가하는 타입 -->
 				<form action="./insertItem" method="post"
 					enctype="multipart/form-data">
 
 					<table align="center">
 						<tr id="imgtr" style="display: none">
-							<td>파일이름</td>
+							<td>Image Name</td>
 							<td><input type="text" name="itemImg" id="itemImg" readonly></td>
 						</tr>
 						<tr>
-							<td>상품종류</td>
+							<td>Type</td>
 							<td><input name="itemType" id="itemType"></td>
 						</tr>
 						<tr>
-							<td>상품명</td>
+							<td>Product Name</td>
 							<td><input name="itemName" id="itemName"></td>
 						</tr>
 						<tr>
-							<td>가격</td>
+							<td>Price</td>
 							<td><input name="itemPrice" id="itemPrice"></td>
 						</tr>
 						<tr>
-							<td>상품설명</td>
+							<td>Details</td>
 							<td><textarea rows="5" cols="60" name="description"
 									id="itemContent"></textarea></td>
 						</tr>
@@ -186,8 +186,8 @@ a {
 							<td colspan="2"><input type="file" name="filename" /> <br />
 						</tr>
 					</table>
-					<input class="btn btn-primary" type="submit" value="상품등록">
-				</form>
+					<input class="btn btn-primary" type="submit" value="Add Product" style=" background-color: white; color: black; padding: 7px; border: 3px solid #ffcfba; border-radius: 10px">
+				</form> <br>
 
 
 			</div>
@@ -202,13 +202,6 @@ a {
 						by 3조. <br>전화번호: 02-1234-5678 | 주소: 서울특별시 종로구 삼일대로 385-1.
 					</small>
 				</div>
-				<!-- 
-							<div class="social">
-								<a href="#"><i class="icon-facebook3"></i></a>
-								<a href="#"><i class="icon-instagram2"></i></a>
-								<a href="#"><i class="icon-linkedin2"></i></a>
-							</div>
-						-->
 			</div>
 		</div>
 	</footer>
