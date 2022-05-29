@@ -57,7 +57,7 @@ div.table-title {
 /*** Table Styles **/
 .table-fill {
 	background: white;
-	border-radius: 3px;
+	border-radius: 50px;
 	border-collapse: collapse;
 	margin: auto;
 	max-width: 1200px;
@@ -81,11 +81,11 @@ th {
 }
 
 th:first-child {
-	border-top-left-radius: 3px;
+	border-top-left-radius: 10px;
 }
 
 th:last-child {
-	border-top-right-radius: 3px;
+	border-top-right-radius: 10px;
 	border-right: none;
 }
 
@@ -122,11 +122,11 @@ tr:nth-child(odd):hover td {
 }
 
 tr:last-child td:first-child {
-	border-bottom-left-radius: 3px;
+	border-bottom-left-radius: 10px;
 }
 
 tr:last-child td:last-child {
-	border-bottom-right-radius: 3px;
+	border-bottom-right-radius: 10px;
 }
 
 td {
