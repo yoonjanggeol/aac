@@ -22,11 +22,6 @@
 <!-- Icomoon Icon Fonts-->
 <link rel="stylesheet" href="css/icomoon.css">
 <!-- Bootstrap  -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
 <!-- Superfish -->
 <link rel="stylesheet" href="css/superfish.css">
 <!-- Flexslider  -->
@@ -34,11 +29,24 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
 
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
 
+<style type="text/css">
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+</style>
+
 </head>
+
 <script>
 	window.onload = function() {
 		$("#modifyDIv").hide()
@@ -59,11 +67,11 @@
 						id="dropdownMenuButton1" style="" data-bs-toggle="dropdown"
 						aria-expanded="false">Category</a>
 						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-							<li><a class="dropdown-item" href="../category/a.jsp">상의</a></li>
-							<li><a class="dropdown-item" href="../category/b.jsp">하의</a></li>
-							<li><a class="dropdown-item" href="../category/c.jsp">아우터</a></li>
-							<li><a class="dropdown-item" href="../category/d.jsp">신발</a></li>
-							<li><a class="dropdown-item" href="../category/e.jsp">액세서리</a></li>
+							<li><a class="dropdown-item" href="./category/a.jsp">상의</a></li>
+							<li><a class="dropdown-item" href="./category/b.jsp">하의</a></li>
+							<li><a class="dropdown-item" href="./category/c.jsp">아우터</a></li>
+							<li><a class="dropdown-item" href="./category/d.jsp">신발</a></li>
+							<li><a class="dropdown-item" href="./category/e.jsp">액세서리</a></li>
 						</ul></li>
 
 					<li><a href="contact.jsp">About</a></li>
@@ -88,7 +96,7 @@
 					<%
 					} else if(!idCheck.equals("admin")) {
 						%>
-							<li><a href="showListItem.jsp">Show Select Lists</a></li>
+							<li><a href="showListItem.jsp">Cart</a></li>
 							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 						<%
 					}
@@ -109,42 +117,42 @@
 
 	<!-- 상품 조회 -->
 	<div style="text-align: center">
-		상품번호 : <input type="text" id="searchItemNum" size="20">
+		Product No : <input type="text" id="searchItemNum" size="20">
 	</div>
 	<br>
 	<div style="text-align: center">
-		<button type="button" onclick="goSearchItem()">상품검색</button>
+		<button type="button" onclick="goSearchItem()" style=" background-color: white; color: black; padding: 7px; border: 3px solid #ffcfba; border-radius: 15px">Search</button>
 	</div>
 	<br>
 	<br>
 	<div id="modifyDIv">
 		<table style="margin: 0 auto">
 			<tr>
-				<td>상품번호</td>
+				<td>Product No.</td>
 				<td><input type="text" id="itemNum" readonly
 					style="background-color: #c8c8c8;"></td>
 			</tr>
 			<tr>
-				<td>상품종류</td>
+				<td>Type</td>
 				<td><input type="text" id="itemType"></td>
 			</tr>
 			<tr>
-				<td>상품명</td>
+				<td>Name</td>
 				<td><input type="text" id="itemName"></td>
 			</tr>
 			<tr>
-				<td>상품가격</td>
+				<td>Price</td>
 				<td><input type="text" id="itemPrice"></td>
 			</tr>
 			<tr>
-				<td>상품설명</td>
+				<td>Details</td>
 				<td><input type="text" id="itemContent"></td>
 			</tr>
 		</table>
 		<br>
 		<div style="text-align: center">
-			<button type="button" onclick="doModify()">상품수정</button>
-			<button type="button" onclick="doDelete()">상품삭제</button>
+			<button type="button" onclick="doModify()" style=" background-color: white; color: black; padding: 10px; border: 5px solid #ffcfba;">상품수정</button>
+			<button type="button" onclick="doDelete()" style=" background-color: white; color: black; padding: 10px; border: 5px solid #ffcfba;">상품삭제</button>
 		</div>
 	</div>
 

@@ -131,9 +131,9 @@ a {
 					String url = "jdbc:oracle:thin:@localhost:1521:xe";
 					String uid = "vanitas";
 					String upw = "0000";
-
-					out.println(id);
-					out.println(password);
+					
+					//out.println(id);
+					//out.println(password);
 
 					String power = "";
 

@@ -4,8 +4,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,11 +25,10 @@
 	}
 </script>
 
-<title>Welcome to AAC!!</title>
+<title>Add a Product</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-<meta name="keywords"
-	content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 <meta name="author" content="FREEHTML5.CO" />
 
 
@@ -48,12 +46,8 @@
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="favicon.ico">
 
-<link
-	href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900'
-	rel='stylesheet' type='text/css'>
-<link
-	href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700"
-	rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
 
 <!-- Animate.css -->
 <link rel="stylesheet" href="css/animate.css">
@@ -68,16 +62,9 @@
 
 <link rel="stylesheet" href="css/style.css">
 <!-- 외부파일 -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-	crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 <style type="text/css">
 a {
@@ -104,9 +91,7 @@ a {
 				<hr>
 				<ul>
 					<li><a href="index.jsp">Home</a></li>
-					<li class="dropdown"><a class="dropdown-toggle"
-						id="dropdownMenuButton1" style="" data-bs-toggle="dropdown"
-						aria-expanded="false">Category</a>
+					<li class="dropdown"><a class="dropdown-toggle" id="dropdownMenuButton1" style="" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
 						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 							<li><a class="dropdown-item" href="./category/a.jsp">상의</a></li>
 							<li><a class="dropdown-item" href="./category/b.jsp">하의</a></li>
@@ -133,11 +118,11 @@ a {
 					<li><a href="insertItem.jsp"><b>Add a Product</b></a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-					} else if(!idCheck.equals("admin")) {
-						%>
-							<li><a href="showListItem.jsp">Show Select Lists</a></li>
-							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
-						<%
+					} else if (!idCheck.equals("admin")) {
+					%>
+					<li><a href="showListItem.jsp">Cart</a></li>
+					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+					<%
 					}
 					} else {
 					}
@@ -155,39 +140,50 @@ a {
 	<div class="panel-body" align="center">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2>상품 등록</h2>
+				<h2>Add a Product</h2>
 				<!-- 파일업로드를 위해 추가하는 타입 -->
-				<form action="./insertItem" method="post"
-					enctype="multipart/form-data">
+				<form action="./insertItem" method="post" enctype="multipart/form-data">
 
 					<table align="center">
 						<tr id="imgtr" style="display: none">
-							<td>파일이름</td>
-							<td><input type="text" name="itemImg" id="itemImg" readonly></td>
+							<td>Image Name</td>
+							<td>
+								<input type="text" name="itemImg" id="itemImg" readonly>
+							</td>
 						</tr>
 						<tr>
-							<td>상품종류</td>
-							<td><input name="itemType" id="itemType"></td>
+							<td>Type</td>
+							<td>
+								<input name="itemType" id="itemType">
+							</td>
 						</tr>
 						<tr>
-							<td>상품명</td>
-							<td><input name="itemName" id="itemName"></td>
+							<td>Product Name</td>
+							<td>
+								<input name="itemName" id="itemName">
+							</td>
 						</tr>
 						<tr>
-							<td>가격</td>
-							<td><input name="itemPrice" id="itemPrice"></td>
+							<td>Price</td>
+							<td>
+								<input name="itemPrice" id="itemPrice">
+							</td>
 						</tr>
 						<tr>
-							<td>상품설명</td>
-							<td><textarea rows="5" cols="60" name="description"
-									id="itemContent"></textarea></td>
+							<td>Details</td>
+							<td>
+								<textarea rows="5" cols="60" name="description" id="itemContent"></textarea>
+							</td>
 						</tr>
 						<tr>
-							<td colspan="2"><input type="file" name="filename" /> <br />
+							<td colspan="2">
+								<input type="file" name="filename" />
+								<br />
 						</tr>
 					</table>
-					<input class="btn btn-primary" type="submit" value="상품등록">
+					<input class="btn btn-primary" type="submit" value="Add Product" style="background-color: white; color: black; padding: 7px; border: 3px solid #ffcfba; border-radius: 10px">
 				</form>
+				<br>
 
 
 			</div>
@@ -198,17 +194,9 @@ a {
 		<div class="container-fluid">
 			<div class="footer-content">
 				<div class="copyright">
-					<small>&copy; 2022 AAC. All Rights Reserved. <br>Project
-						by 3조. <br>전화번호: 02-1234-5678 | 주소: 서울특별시 종로구 삼일대로 385-1.
+					<small>&copy; 2022 AAC. All Rights Reserved. <br>Project by 3조. <br>전화번호: 02-1234-5678 | 주소: 서울특별시 종로구 삼일대로 385-1.
 					</small>
 				</div>
-				<!-- 
-							<div class="social">
-								<a href="#"><i class="icon-facebook3"></i></a>
-								<a href="#"><i class="icon-instagram2"></i></a>
-								<a href="#"><i class="icon-linkedin2"></i></a>
-							</div>
-						-->
 			</div>
 		</div>
 	</footer>

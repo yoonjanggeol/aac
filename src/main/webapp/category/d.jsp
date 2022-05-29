@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Welcome to AAC!!</title>
+<title>Shoes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 <meta name="keywords"
@@ -112,7 +112,11 @@ a {
 					<li><a href="../insertItem.jsp">Add a Product</a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
-					} else {
+					} else if(!idCheck.equals("admin")) {
+						%>
+							<li><a href="../showListItem.jsp">Cart</a></li>
+							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
+						<%
 					}
 					} else {
 					}
@@ -133,75 +137,27 @@ a {
 		<div id="fh5co-projects-feed"
 			class="fh5co-projects-feed clearfix masonry">
 			<div class="fh5co-project masonry-brick">
-				<a href="products/a1.jsp"> <img src="images/a1.jpg"
-					alt="겜빗 스타디움 자켓" width="300px">
-					<h2>겜빗 스타디움 자켓</h2>
+				<a href="../products/d1.jsp"> <img src="../images/d1.jpg"
+					alt="4CM 키높이 팀버스 하이 워커" width="300px">
+					<h2>4CM 키높이 팀버스 하이 워커</h2>
 				</a>
 			</div>
 			<div class="fh5co-project masonry-brick">
-				<a href="products/a2.jsp"> <img src="images/a2.jpg"
-					alt="톰 후드 자켓" width="300px">
-					<h2>톰 후드 자켓</h2>
+				<a href="../products/d2.jsp"> <img src="../images/d2.jpg"
+					alt="허니 더비 슈즈" width="300px">
+					<h2>허니 더비 슈즈</h2>
 				</a>
 			</div>
 			<div class="fh5co-project masonry-brick">
-				<a href="products/a3.jsp"> <img src="images/a3.jpg"
-					alt="울 트렌치 코트" width="300px">
-					<h2>울 트렌치 코트</h2>
+				<a href="../products/d3.jsp"> <img src="../images/d3.jpg"
+					alt="뮬 스니커즈" width="300px">
+					<h2>뮬 스니커즈</h2>
 				</a>
 			</div>
 			<div class="fh5co-project masonry-brick">
-				<a href="products/a4.jsp"> <img src="images/a4.jpg"
-					alt="오버핏 무스탕 자켓" width="300px">
-					<h2>오버핏 무스탕 자켓</h2>
-				</a>
-			</div>
-			<div class="fh5co-project masonry-brick">
-				<a href="products/b1.jsp"> <img src="images/b1.jpg"
-					alt="헤비 오버핏 니트" width="300px">
-					<h2>헤비 오버핏 니트</h2>
-				</a>
-			</div>
-			<div class="fh5co-project masonry-brick">
-				<a href="products/b2.jsp"> <img src="images/b2.jpg" alt="퍼스텝 니트"
-					width="300px">
-					<h2>퍼스텝 니트</h2>
-				</a>
-			</div>
-			<div class="fh5co-project masonry-brick">
-				<a href="products/b3.jsp"> <img src="images/b3.jpg" alt="퍼스텝 니트"
-					width="300px">
-					<h2>퍼스텝 니트</h2>
-				</a>
-			</div>
-			<div class="fh5co-project masonry-brick">
-				<a href="products/b4.jsp"> <img src="images/b4.jpg"
-					alt="스티치 세미오버핏 자켓 (챠콜)" width="300px">
-					<h2>스티치 세미오버핏 자켓 (챠콜)</h2>
-				</a>
-			</div>
-			<div class="fh5co-project masonry-brick">
-				<a href="products/c1.jsp"> <img src="images/c1.jpg"
-					alt="밴딩 쿨 크롭팬츠" width="300px">
-					<h2>밴딩 쿨 크롭팬츠</h2>
-				</a>
-			</div>
-			<div class="fh5co-project masonry-brick">
-				<a href="products/c2.jsp"> <img src="images/c2.jpg"
-					alt="히든 밴딩 슬랙스" width="300px">
-					<h2>히든 밴딩 슬랙스</h2>
-				</a>
-			</div>
-			<div class="fh5co-project masonry-brick">
-				<a href="products/c3.jsp"> <img src="images/c3.jpg"
-					alt="테이퍼드 슬랙스" width="300px">
-					<h2>테이퍼드 슬랙스</h2>
-				</a>
-			</div>
-			<div class="fh5co-project masonry-brick">
-				<a href="products/c4.jsp"> <img src="images/c4.jpg"
-					alt="딥 컬러 와이드 슬랙스" width="300px">
-					<h2>딥 컬러 와이드 슬랙스</h2>
+				<a href="../products/d4.jsp"> <img src="../images/d4.jpg"
+					alt="LOVE 레터링 스니커즈" width="300px">
+					<h2>LOVE 레터링 스니커즈</h2>
 				</a>
 			</div>
 		</div>

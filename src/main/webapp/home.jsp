@@ -120,7 +120,7 @@
 							<%
 							} else if(!idCheck.equals("admin")) {
 								%>
-									<li><a href="showListItem.jsp">Show Select Lists</a></li>
+									<li><a href="showListItem.jsp">Cart</a></li>
 									<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 								<%
 							}

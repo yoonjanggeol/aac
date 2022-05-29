@@ -136,7 +136,7 @@ a {
 					<%
 					} else if(!idCheck.equals("admin")) {
 						%>
-							<li><a href="showListItem.jsp">Show Select Lists</a></li>
+							<li><a href="showListItem.jsp">Cart</a></li>
 							<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 						<%
 					}
@@ -163,10 +163,7 @@ a {
 						<ol class="carousel-indicators">
 							<li data-bs-target="#carouselExampleIndicators"
 								data-bs-slide-to="0" class="active"></li>
-							<li data-bs-target="#carouselExampleIndicators"
-								data-bs-slide-to="1"></li>
-							<li data-bs-target="#carouselExampleIndicators"
-								data-bs-slide-to="2"></li>
+
 						</ol>
 							
 						<div class="carousel-inner">
@@ -174,16 +171,6 @@ a {
 								<img id="itemImg" src="" class="d-block w-100" alt="...">
 							</div>
 							
-							<div class="carousel-item">
-								<img
-									src="http://earlyadopter.godohosting.com/goods_earlyadopter_godo_co_kr/162/1578368250813m2.jpg?cache_ver=202012274"
-									class="d-block w-100" alt="...">
-							</div>
-							<div class="carousel-item">
-								<img
-									src="http://earlyadopter.godohosting.com/goods_earlyadopter_godo_co_kr/162/1578368250328m4.jpg?cache_ver=202012274"
-									class="d-block w-100" alt="...">
-							</div>
 						</div>
 						<a class="carousel-control-prev" href="#carouselExampleIndicators"
 							role="button" data-bs-slide="prev"> <span
@@ -210,22 +197,19 @@ a {
 							<!-- 제품 가격 불러올 태그 위치 -->
 							<h5 class="card-title pt-3 pb-3 border-top" id="itemPrice"></h5>
 							
-							<!-- 제품 내용 불러올 태그 위치 -->
-							<p class="card-text border-top pt-3" id="itemContent"></p>
-							
 							<!-- 제품 종류 -->
 							<p class="card-text border-top pt-3">
 								<span class="badge bg-dark" id="itemType"></span> 
 							</p>
 							
+							<!-- 제품 내용 불러올 태그 위치 -->
+							<p class="card-text border-top pt-3" id="itemContent"></p>
 							
 							    
 							    
 														
 							
-							
-							<p class="card-text pb-3">배송비 2,500원 | 도서산간(제주도) 배송비 추가
-								5,000원 | 택배배송 | 5일 이내 출고 (주말,공휴일 제외)</p>
+
 							<p class="card-text border-top pb-3">
 							<div class="row">
 								<div class="col-auto">
