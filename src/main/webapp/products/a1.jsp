@@ -60,7 +60,16 @@
 <!--[if lt IE 9]>
 		<script src="js/respond.min.js"></script>
 		<![endif]-->
-
+<script type="text/javascript" src="../js/products.js"></script>
+<script type="text/javascript" src="../js/admin.js"></script>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/shoppingList.js"></script>
+<script>
+		window.onload = function() {
+			productInfo()
+	
+		}
+</script>
 <style type="text/css">
 a {
 	text-decoration: none;
@@ -68,26 +77,6 @@ a {
 }
 </style>
 
-<script>
-	
-	var price=84400;
-	
-	window.onload = function(){
-		 document.getElementById("price").innerHTML = priceToString(price)+"원";
-	}
-
-	function Calculate() {
-	    var quantity = parseInt(document.getElementById("quantity").value);
-		var total = price * quantity;
-	    document.getElementById("total").innerHTML = "<h3>"+priceToString(total)+"원</h3>";
-	}
-	
-	function priceToString(a) {
-	    return a.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-	}
-	
-	
-</script>
 </head>
 <body>
 
@@ -147,7 +136,7 @@ a {
 			<hr>
 		</div>
 		<div style="display: none;">
-			<%@ include file="../loginFormSmallFolder.jsp"%>
+			
 	</div> 
 	</header>
 	<!-- END #fh5co-header -->
@@ -169,7 +158,7 @@ a {
 						</ol>
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img
+								<img id="itemImg" 
 									src="../images/a1.jpg"
 									class="d-block w-100" alt="...">
 							</div>
@@ -199,37 +188,56 @@ a {
 				<div class="col-md-7">
 					<div class="card shadow-sm">
 						<div class="card-body">
-							<h5 class="card-title">겜빗 스타디움 자켓</h5>
-							<h5 class="card-title pt-3 pb-3 border-top" id="price">.</h5>
+						
+							<!-- 제품 번호 숨긴상태로 불러올 태그 위치 -->
+							<div style="display: none;" id="itemNum"></div>
+							
+							<!-- 제품 이름 -->
+							<h5 class="card-title" id="itemName">겜빗 스타디움 자켓</h5>
+							
+							<!-- 제품 가격 -->
+							<h5 class="card-title pt-3 pb-3 border-top" id="itemPrice">84400</h5>
+							
+							<!-- 제품 종류 -->
 							<p class="card-text border-top pt-3">
+								<span class="badge bg-dark" id="itemType">상의</span>
 								<span class="badge bg-dark">JACKETS</span>
 							</p>
-							<p class="card-text pb-3">3M 신슐레이트 충전재로 보온성을 높였으며 가벼운 착용감을 느낄 수 있습니다. 여유있는 오버핏으로 다양한 코디가 가능합니다.</p>
+							
+							<p class="card-text pb-3" id="itemContent">3M 신슐레이트 충전재로 보온성을 높였으며 가벼운 착용감을 느낄 수 있습니다. 여유있는 오버핏으로 다양한 코디가 가능합니다.</p>
+							
+							
+							
+							
 							<p class="card-text border-top pb-3">
 							<div class="row">
 								<div class="col-auto">
-									<label class="col-form-label">Quantity</label>
+									<div>구매 수량</div>
 								</div>
 								<div class="col-auto">
 									<div class="input-group">
-										<input type="number" name="quantity" id="quantity" tabindex="1"
-											class="form-control" placeholder="0" value="1" min="1"
-											max="100" onfocusout="Calculate()">
+								        <button type ="button" onclick="fnCalCount('p',this)">+</button>
+								        	<input type="text" id="iCount" name="iCount" value="0" style="text-align:center;"/>
+								        <button type="button" onclick="fnCalCount('m', this)">-</button>										   
 									</div>
 								</div>
 							</div>
 							</p>
 							<div class="row pt-3 pb-3 border-top">
 								<div class="col-6">
-									<h3>Total</h3>
+									<h3 id="totalPrice"></h3>
 								</div>
-								<div class="col-6" style="text-align: right;" id="total">
-									<h3>84,400원</h3>
+								<div class="col-6" style="text-align: right;">
+									<h3></h3>
 								</div>
 							</div>
 							<div class="d-flex justify-content-between align-items-center">
-								<div class="col-12 d-grid p-1">
-									<button type="button" class="btn btn-lg btn-dark">Add to Cart</button>
+								<div class="col-6 d-grid p-1">
+									<button type="button" class="btn btn-lg btn-dark" onclick="selectItem()">장바구니
+										담기</button>
+								</div>
+								<div class="col-6 d-grid p-1">
+									<button type="button" class="btn btn-lg btn-danger" onclick="location.href='shoppingList.jsp'">장바구니 보기</button>
 								</div>
 							</div>
 						</div>

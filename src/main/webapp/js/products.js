@@ -17,9 +17,7 @@ function productInfo() {
 			let a = './upload/' + items.itemImg;
 			document.getElementById('itemImg').setAttribute('src', a);
 		}
-
 	})
-	
 }
 
 
@@ -38,7 +36,16 @@ function fnCalCount(type, ths){
 			input.setAttribute('value', iCount)
 		}    
 	}
+	
+	var price = document.getElementById('itemPrice');
+	
+	var totalPrice = document.getElementById('totalPrice');
+	console.log(iCount)
+	console.log(price.innerText)
+	totalPrice.innerText = Number(iCount) * Number(price.innerText);
+	
 }
+
 
 
 

@@ -148,7 +148,9 @@ a {
 			<hr>
 		</div>
 <div style="display: none;">
+
 	<%@ include file="./loginFormSmall.jsp"%>
+
 </div>
 	</header>
 	<!-- END #fh5co-header -->
@@ -209,7 +211,7 @@ a {
 							    
 														
 							
-
+								
 							<p class="card-text border-top pb-3">
 							<div class="row">
 								<div class="col-auto">
@@ -226,10 +228,10 @@ a {
 							</p>
 							<div class="row pt-3 pb-3 border-top">
 								<div class="col-6">
-									<h3>총 상품 금액</h3>
+									<h3 id="totalPrice"></h3>
 								</div>
 								<div class="col-6" style="text-align: right;">
-									<h3>219,000</h3>
+									<h3></h3>
 								</div>
 							</div>
 							<div class="d-flex justify-content-between align-items-center">
