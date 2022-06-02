@@ -25,7 +25,7 @@ function selectItem() {
 			iCount : iCount
 		},
 		success: function(res) {
-			if(iCount >0){
+			if(iCount > 0){
 				if (res === "1") {
 				alert("장바구니에 추가되었습니다.")
 				location.href = "./showListItem.jsp"
@@ -38,6 +38,58 @@ function selectItem() {
 		}
 	})
 }
+
+// 이미 있는 제품 장바구니 등록 함수
+function selectItem2() {
+	let id = '<%=(String)session.getAttribute("userid")%>';
+	console.log(id);
+	let name = '<%=(String)session.getAttribute("userName")%>';
+	console.log(name);
+	let iNum = document.querySelector('#itemNum').innerText;
+	console.log(iNum);	
+	let iName = document.querySelector('#itemName').innerText;
+	console.log(iName);	
+	let iPrice = document.querySelector('#itemPrice').innerText;
+	console.log(iPrice);
+	let iContent = document.querySelector('#itemContent').innerText;
+	console.log(iContent);
+	let iType = document.querySelector('#itemType').innerText;
+	console.log(iType);
+	let iImg = document.getElementById('itemImg').getAttribute('src');
+	console.log(iImg);
+	let iCount = document.getElementById('iCount').getAttribute('value')
+	console.log(iCount);
+	let pageName = document.getElementById('pageName').innerText;
+	
+	$.ajax({
+		type: 'POST',
+		url: './' + pageName + '.jsp',
+		data: {
+			id : id,
+			name : name,
+			iNum : iNum,
+			iName : iName,
+			iPrice : iPrice,
+			iContent : iContent,
+			iType : iType,
+			iImg : iImg,
+			iCount : iCount
+		},
+		success: function(res) {
+			if(iCount >0){
+				if (res === "1") {
+				alert("장바구니에 추가되었습니다.")
+				location.href = "../showListItem.jsp"
+				}	
+			}
+			else {
+				alert("수량을 정해주세요!!!")
+			}
+			
+		}
+	})
+}
+
 
 
 

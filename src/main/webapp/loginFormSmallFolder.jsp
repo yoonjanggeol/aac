@@ -20,7 +20,7 @@
 	String password = request.getParameter("password");
 	// DB연결에 필요한 변수 선언
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	String uid = "jspam";
+	String uid = "tjoeunit";
 	String upw = "0000";
 
 	String power = "";

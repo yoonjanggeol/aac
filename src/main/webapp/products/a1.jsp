@@ -138,6 +138,9 @@ a {
 		<div style="display: none;">
 			
 	</div> 
+	<div style="display: none;">
+		<%@ include file="../loginFormSmall.jsp"%>
+	</div>
 	</header>
 	<!-- END #fh5co-header -->
 
@@ -189,26 +192,27 @@ a {
 					<div class="card shadow-sm">
 						<div class="card-body">
 						
+							<!-- 페이지 번호 숨긴상태로 불러올 태그 위치 -->
+							<div style="display: none;" id="pageName">a1</div>
+						
 							<!-- 제품 번호 숨긴상태로 불러올 태그 위치 -->
-							<div style="display: none;" id="itemNum"></div>
+							<div style="display: none;" id="itemNum">90001</div>
 							
 							<!-- 제품 이름 -->
 							<h5 class="card-title" id="itemName">겜빗 스타디움 자켓</h5>
 							
 							<!-- 제품 가격 -->
+							<hr/>
+							PRICE
 							<h5 class="card-title pt-3 pb-3 border-top" id="itemPrice">84400</h5>
-							
 							<!-- 제품 종류 -->
 							<p class="card-text border-top pt-3">
-								<span class="badge bg-dark" id="itemType">상의</span>
+								<span class="badge bg-dark" id="itemType">아우터</span>
 								<span class="badge bg-dark">JACKETS</span>
 							</p>
 							
 							<p class="card-text pb-3" id="itemContent">3M 신슐레이트 충전재로 보온성을 높였으며 가벼운 착용감을 느낄 수 있습니다. 여유있는 오버핏으로 다양한 코디가 가능합니다.</p>
-							
-							
-							
-							
+														
 							<p class="card-text border-top pb-3">
 							<div class="row">
 								<div class="col-auto">
@@ -233,11 +237,11 @@ a {
 							</div>
 							<div class="d-flex justify-content-between align-items-center">
 								<div class="col-6 d-grid p-1">
-									<button type="button" class="btn btn-lg btn-dark" onclick="selectItem()">장바구니
+									<button type="button" class="btn btn-lg btn-dark" onclick="selectItem2()">장바구니
 										담기</button>
 								</div>
 								<div class="col-6 d-grid p-1">
-									<button type="button" class="btn btn-lg btn-danger" onclick="location.href='shoppingList.jsp'">장바구니 보기</button>
+									<button type="button" class="btn btn-lg btn-danger" onclick="location.href='../showListItem.jsp'">장바구니 보기</button>
 								</div>
 							</div>
 						</div>

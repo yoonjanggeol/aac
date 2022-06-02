@@ -143,9 +143,6 @@ a {
 			</nav>
 			<hr>
 		</div>
-		<div style="display: none;">
-			<%@ include file="../loginFormSmall.jsp"%>
-	</div>
 	</header>
 	<!-- END #fh5co-header -->
 

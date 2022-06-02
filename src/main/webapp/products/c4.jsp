@@ -60,7 +60,16 @@
 <!--[if lt IE 9]>
 		<script src="js/respond.min.js"></script>
 		<![endif]-->
-
+<script type="text/javascript" src="../js/products.js"></script>
+<script type="text/javascript" src="../js/admin.js"></script>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/shoppingList.js"></script>
+<script>
+		window.onload = function() {
+			productInfo()
+	
+		}
+</script>
 <style type="text/css">
 a {
 	text-decoration: none;
@@ -143,9 +152,6 @@ a {
 			</nav>
 			<hr>
 		</div>
-		<div style="display: none;">
-			<%@ include file="../loginFormSmallFolder.jsp"%>
-	</div>
 	</header>
 	<!-- END #fh5co-header -->
 
@@ -166,7 +172,7 @@ a {
 						</ol>
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img
+								<img id="itemImg"
 									src="../images/c4.jpg"
 									class="d-block w-100" alt="...">
 							</div>
@@ -196,37 +202,60 @@ a {
 				<div class="col-md-7">
 					<div class="card shadow-sm">
 						<div class="card-body">
-							<h5 class="card-title">딥 컬러 와이드 슬랙스</h5>
-							<h5 class="card-title pt-3 pb-3 border-top" id="price">54,400원</h5>
+						
+						
+							<!-- 제품 번호 숨긴상태로 불러올 태그 위치 -->
+							<div style="display: none;" id="itemNum"></div>
+							
+							<!-- 제품 이름 -->
+							<h5 class="card-title" id="itemName">딥 컬러 와이드 슬랙스</h5>
+							
+							<!-- 제품 가격 -->
+							<hr/>
+							PRICE
+							<h5 class="card-title pt-3 pb-3 border-top" id="itemPrice">54400</h5>
+							
+							<!-- 제품 종류 -->
 							<p class="card-text border-top pt-3">
-								<span class="badge bg-dark">PANTS</span>
+								<span class="badge bg-dark" id="itemType">하의</span>
+								<span class="badge bg-dark">JACKETS</span>
 							</p>
-							<p class="card-text pb-3">한여름까지 착용하기 좋은 라이트한 두께감의 면 100% 원단으로 제작된 팬츠입니다. 워싱을 통해 부드러운 촉감과 세탁시 수축이 적습니다.</p>
+							
+							
+							<p class="card-text pb-3" id="itemContent">한여름까지 착용하기 좋은 라이트한 두께감의 면 100% 원단으로 제작된 팬츠입니다. 워싱을 통해 부드러운 촉감과 세탁시 수축이 적습니다.</p>
+							
+							
+							
+						
 							<p class="card-text border-top pb-3">
 							<div class="row">
 								<div class="col-auto">
-									<label class="col-form-label">Quantity</label>
+									<div>구매 수량</div>
 								</div>
 								<div class="col-auto">
 									<div class="input-group">
-										<input type="number" name="quantity" id="quantity" tabindex="1"
-											class="form-control" placeholder="0" value="1" min="1"
-											max="100" onfocusout="Calculate()">
+								        <button type ="button" onclick="fnCalCount('p',this)">+</button>
+								        	<input type="text" id="iCount" name="iCount" value="0" style="text-align:center;"/>
+								        <button type="button" onclick="fnCalCount('m', this)">-</button>										   
 									</div>
 								</div>
 							</div>
 							</p>
 							<div class="row pt-3 pb-3 border-top">
 								<div class="col-6">
-									<h3>Total</h3>
+									<h3 id="totalPrice"></h3>
 								</div>
-								<div class="col-6" style="text-align: right;" id="total">
-									<h3>54,400원</h3>
+								<div class="col-6" style="text-align: right;">
+									<h3></h3>
 								</div>
 							</div>
 							<div class="d-flex justify-content-between align-items-center">
-								<div class="col-12 d-grid p-1">
-									<button type="button" class="btn btn-lg btn-dark">Add to Cart</button>
+								<div class="col-6 d-grid p-1">
+									<button type="button" class="btn btn-lg btn-dark" onclick="selectItem2()">장바구니
+										담기</button>
+								</div>
+								<div class="col-6 d-grid p-1">
+									<button type="button" class="btn btn-lg btn-danger" onclick="location.href='shoppingList.jsp'">장바구니 보기</button>
 								</div>
 							</div>
 						</div>

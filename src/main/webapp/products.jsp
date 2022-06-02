@@ -115,6 +115,7 @@ a {
 							<li><a href="./category/e.jsp">액세서리</a></li>
 						</ul></li>
 					<li><a href="contact.jsp">About</a></li>
+					<li><a href="listItem.jsp">Product Lists</a></li>
 					<%
 						String loginCheck = (String) session.getAttribute("login");
 						if(loginCheck != null) {
@@ -130,7 +131,6 @@ a {
 							if(idCheck.equals("admin")) {
 					%>
 
-					<li><a href="listItem.jsp">Product Lists</a></li>
 					<li><a href="insertItem.jsp">Add a Product</a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
@@ -147,11 +147,9 @@ a {
 			</nav>
 			<hr>
 		</div>
-<div style="display: none;">
-
-	<%@ include file="./loginFormSmall.jsp"%>
-
-</div>
+	<div style="display: none;">
+		<%@ include file="./loginFormSmall.jsp"%>
+	</div>
 	</header>
 	<!-- END #fh5co-header -->
 

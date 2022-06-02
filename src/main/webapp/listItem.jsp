@@ -173,6 +173,7 @@ td:last-child {
 						</ul></li>
 
 					<li><a href="contact.jsp">About</a></li>
+					<li><a href="listItem.jsp">Product Lists</a></li>
 					<%
 					String loginCheck = (String) session.getAttribute("login");
 					if (loginCheck != null) {
@@ -188,7 +189,6 @@ td:last-child {
 					if (idCheck.equals("admin")) {
 					%>
 
-					<li><a href="listItem.jsp"><b>Product Lists</b></a></li>
 					<li><a href="insertItem.jsp">Add a Product</a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
@@ -207,9 +207,9 @@ td:last-child {
 			<hr>
 		</div>
 
-		<div style="display: none;">
-			<%@ include file="./loginFormSmall.jsp"%>
-		</div>
+	<div style="display: none;">
+		<%@ include file="./loginFormSmall.jsp"%>
+	</div>
 
 	</header>
 	<!-- END #fh5co-header -->

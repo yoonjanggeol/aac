@@ -74,6 +74,7 @@ a {
 }
 </style>
 </head>
+
 <body>
 
 	<header id="fh5co-header" role="banner">
@@ -97,6 +98,7 @@ a {
 						</ul></li>
 
 					<li><a href="contact.jsp">About</a></li>
+					<li><a href="listItem.jsp">Product Lists</a></li>
 					<%
 					String loginCheck = (String) session.getAttribute("login");
 					if (loginCheck != null) {
@@ -131,9 +133,9 @@ a {
 			<hr>
 		</div>
 
-		<div style="display: none;">
-			<%@ include file="./loginFormSmall.jsp"%>
-		</div>
+	<div style="display: none;">
+		<%@ include file="./loginFormSmall.jsp"%>
+	</div>
 	</header>
 	<!-- END #fh5co-header -->
 
