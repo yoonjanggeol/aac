@@ -102,7 +102,6 @@ a {
 							<li><a class="dropdown-item" href="./category/e.jsp">액세서리</a></li>
 						</ul></li>
 					<li><a href="contact.jsp"><b>About</b></a></li>
-					<li><a href="listItem.jsp">Product Lists</a></li>
 					<%
 								String loginCheck = (String) session.getAttribute("login");
 								if(loginCheck != null) {
@@ -118,6 +117,7 @@ a {
 									if(idCheck.equals("admin")) {
 							%>
 
+					<li><a href="listItem.jsp">Product Lists</a></li>
 					<li><a href="insertItem.jsp">Add a Product</a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%

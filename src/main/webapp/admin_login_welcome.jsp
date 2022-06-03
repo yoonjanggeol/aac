@@ -129,8 +129,8 @@ a {
 									if(idCheck.equals("admin")) {
 							%>
 
-					<li><a href="listItem.jsp">Product Lists</a></li>
 					<li><a href="insertItem.jsp">Add a Product</a></li>
+					<li><a href="listItem.jsp">Product Lists</a></li>
 					<li><a onclick="location.href='?logout=yes'">Log Out</a></li>
 					<%
 									} else {}

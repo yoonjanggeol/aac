@@ -98,7 +98,6 @@ a {
 						</ul></li>
 
 					<li><a href="contact.jsp">About</a></li>
-					<li><a href="listItem.jsp">Product Lists</a></li>
 					<%
 					String loginCheck = (String) session.getAttribute("login");
 					if (loginCheck != null) {
@@ -154,13 +153,13 @@ a {
 					</ol>
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="images/I.jpg" class="d-block w-100" alt="...">
+							<img src="images/bbb1.PNG" class="d-block w-100" alt="...">
 						</div>
 						<div class="carousel-item">
-							<img src="images/wanna.jpg" class="d-block w-100" alt="...">
+							<img src="images/bbb2.PNG" class="d-block w-100" alt="...">
 						</div>
 						<div class="carousel-item">
-							<img src="images/gohome.jpg" class="d-block w-100" alt="...">
+							<img src="images/bbb3.PNG" class="d-block w-100" alt="...">
 						</div>
 					</div>
 					<a class="carousel-control-prev" href="#carouselExampleIndicators"
